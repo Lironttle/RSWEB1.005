@@ -12,6 +12,7 @@ import {
   ChevronRight,
   ArrowRight,
   MapPin,
+  UserRound,
 } from 'lucide-react';
 
 const fadeInUp = {
@@ -81,6 +82,17 @@ const timelineEvents = [
     title: 'Working with L&Q Housing',
     description: 'Proudly partnering with L&Q Housing, delivering trusted construction and property services across London.',
   },
+];
+
+const teamMembers = [
+  { name: 'Raimundas Zibuda', role: 'Director' },
+  { name: 'Povilas Zibuda', role: 'Manager' },
+  { name: 'Jethro van Biljon', role: 'Contracts Manager' },
+  { name: 'Pawel Golebiowski', role: 'Electrical QS' },
+  { name: 'Ausra Budenaite', role: 'Accounts Clerk' },
+  { name: 'Kasparas Zibuda', role: 'Assistant Manager' },
+  { name: 'Armantas Padriezas', role: 'Assistant Manager' },
+  { name: 'Aironas Mazutis', role: 'Assistant Manager' },
 ];
 
 const coverageAreas = [
@@ -298,6 +310,79 @@ export default function About() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden py-20 md:py-28 bg-white dark:bg-dark">
+        <svg
+          className="absolute right-0 bottom-0 text-primary/10 dark:text-primary/15 pointer-events-none"
+          fill="none"
+          height="154"
+          viewBox="0 0 460 154"
+          width="460"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M-87.463 458.432C-102.118 348.092 -77.3418 238.841 -15.0744 188.274C57.4129 129.408 180.708 150.071 351.748 341.128C278.246 -374.233 633.954 380.602 548.123 42.7707"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="40"
+          />
+        </svg>
+
+        <div className="relative z-10 container-custom">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="mx-auto mb-16 flex max-w-3xl flex-col items-center text-center"
+          >
+            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white">
+              <Users className="w-6 h-6" />
+            </div>
+            <span className="text-primary font-medium tracking-wide uppercase text-sm">Meet the Team</span>
+            <h2 className="text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3 mb-4">
+              The People Behind RS Construction
+            </h2>
+            <p className="max-w-2xl text-muted dark:text-gray-400">
+              A dedicated team of specialists committed to delivering quality
+              craftsmanship and genuine care on every project.
+            </p>
+          </motion.div>
+
+          <div className="marquee-pause relative w-full overflow-hidden">
+            <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-16 sm:w-32 bg-gradient-to-r from-white to-transparent dark:from-dark" />
+            <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-16 sm:w-32 bg-gradient-to-l from-white to-transparent dark:from-dark" />
+
+            <div className="flex w-max gap-6 animate-marquee">
+              {[...teamMembers, ...teamMembers].map((member, idx) => (
+                <div
+                  key={`${member.name}-${idx}`}
+                  className="group flex w-56 sm:w-64 shrink-0 flex-col"
+                >
+                  <div className="relative h-72 sm:h-80 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-primary-50 to-light dark:from-surface dark:to-surface-dark border border-gray-200/70 dark:border-surface-border">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <UserRound
+                        className="w-24 h-24 text-primary/30 dark:text-primary/40 transition-transform duration-500 group-hover:scale-110"
+                        strokeWidth={1.25}
+                      />
+                    </div>
+                    <div className="absolute bottom-0 w-full bg-white/85 dark:bg-surface/85 backdrop-blur-sm p-3">
+                      <h3 className="font-semibold text-dark dark:text-white text-sm sm:text-base truncate">
+                        {member.name}
+                      </h3>
+                      <p className="text-muted dark:text-gray-400 text-xs sm:text-sm">
+                        {member.role}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
