@@ -421,48 +421,11 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="bg-light dark:bg-surface-dark rounded-2xl p-8 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
-                  <svg viewBox="0 0 400 400" className="w-full h-full">
-                    <circle cx="200" cy="200" r="150" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                    <circle cx="200" cy="200" r="100" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                    <circle cx="200" cy="200" r="50" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                  </svg>
-                </div>
-
-                <div className="relative grid grid-cols-3 gap-4">
-                  <div className="col-start-2 flex justify-center">
-                    <div className="bg-white dark:bg-surface p-4 rounded-xl shadow-sm text-center">
-                      <MapPin className="w-6 h-6 text-muted dark:text-gray-400 mx-auto mb-2" />
-                      <span className="text-sm text-muted dark:text-gray-400">North</span>
-                    </div>
-                  </div>
-                  <div className="flex justify-center">
-                    <div className="bg-white dark:bg-surface p-4 rounded-xl shadow-sm text-center">
-                      <MapPin className="w-6 h-6 text-muted dark:text-gray-400 mx-auto mb-2" />
-                      <span className="text-sm text-muted dark:text-gray-400">West</span>
-                    </div>
-                  </div>
-                  <div className="flex justify-center">
-                    <div className="bg-white dark:bg-surface p-4 rounded-xl shadow-sm text-center">
-                      <MapPin className="w-6 h-6 text-muted dark:text-gray-400 mx-auto mb-2" />
-                      <span className="text-sm text-muted dark:text-gray-400">Central</span>
-                    </div>
-                  </div>
-                  <div className="flex justify-center">
-                    <div className="bg-primary p-4 rounded-xl shadow-lg text-center">
-                      <MapPin className="w-6 h-6 text-white mx-auto mb-2" />
-                      <span className="text-sm text-white font-medium">East</span>
-                    </div>
-                  </div>
-                  <div className="col-start-2 flex justify-center">
-                    <div className="bg-white dark:bg-surface p-4 rounded-xl shadow-sm text-center">
-                      <MapPin className="w-6 h-6 text-muted dark:text-gray-400 mx-auto mb-2" />
-                      <span className="text-sm text-muted dark:text-gray-400">South</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <img
+                src="/images/photos/london.view.webp"
+                alt="London view"
+                className="rounded-2xl w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
+              />
             </motion.div>
           </div>
         </div>
