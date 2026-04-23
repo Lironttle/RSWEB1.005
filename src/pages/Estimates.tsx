@@ -215,7 +215,7 @@ export default function Estimates() {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-white dark:from-dark via-white/95 dark:via-dark/95 to-white/70 dark:to-dark/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/80 dark:from-dark/80 via-white/60 dark:via-dark/60 to-white/30 dark:to-dark/30" />
 
         <div className="relative container-custom py-20 sm:py-32">
           <motion.nav
