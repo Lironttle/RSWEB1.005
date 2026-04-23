@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
+import { cn } from '../lib/utils';
 import {
   Shield,
   Settings,
@@ -56,6 +57,29 @@ const values = [
     icon: Layers,
     title: 'Comprehensive',
     description: 'Full range of building services under one roof',
+  },
+];
+
+const timelineEvents = [
+  {
+    year: '2010',
+    title: 'RS Construction Founded',
+    description: 'Family-owned business established in East London with a commitment to quality craftsmanship.',
+  },
+  {
+    year: '2015',
+    title: 'Will fill in later',
+    description: 'Will fill in later.',
+  },
+  {
+    year: '2020',
+    title: 'Will fill in later',
+    description: 'Will fill in later.',
+  },
+  {
+    year: '2026',
+    title: 'Working with L&Q Housing',
+    description: 'Proudly partnering with L&Q Housing, delivering trusted construction and property services across London.',
   },
 ];
 
@@ -161,6 +185,74 @@ export default function About() {
                 From residential renovations to commercial developments, our experienced team brings
                 dedication, expertise, and attention to detail to every job we undertake.
               </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28 bg-white dark:bg-dark">
+        <div className="container-custom">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-12"
+          >
+            <span className="text-primary font-medium tracking-wide uppercase text-sm">Our Journey</span>
+            <h2 className="text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3">
+              Milestones Through the Years
+            </h2>
+          </motion.div>
+
+          <div className="relative max-w-3xl mx-auto py-4 px-4">
+            <div className="absolute left-[18px] top-0 h-full w-[2px] bg-gradient-to-b from-primary/60 to-primary-900/60 dark:from-primary/50 dark:to-primary-800/50" />
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="space-y-12"
+            >
+              {timelineEvents.map((event) => (
+                <motion.div
+                  key={event.year}
+                  variants={fadeInUp}
+                  className="relative flex gap-6 items-start"
+                >
+                  <div className="relative z-10">
+                    <div
+                      className={cn(
+                        'h-4 w-4 rounded-full border-2 border-white dark:border-dark',
+                        'bg-gradient-to-r from-primary-400 to-primary-700',
+                        'shadow-[0_0_12px_rgba(220,38,38,0.6)]',
+                        'transition-transform duration-200 hover:scale-110'
+                      )}
+                    />
+                  </div>
+
+                  <div
+                    className={cn(
+                      'flex-1 rounded-lg p-4 backdrop-blur-xl',
+                      'bg-white/70 dark:bg-surface/70',
+                      'border border-gray-200/60 dark:border-white/10',
+                      'shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]',
+                      'hover:shadow-[0_10px_36px_rgba(0,0,0,0.15)] transition-all duration-300'
+                    )}
+                  >
+                    <span className="text-xs font-semibold uppercase tracking-wide text-primary dark:text-primary-400">
+                      {event.year}
+                    </span>
+                    <h3 className="mt-1 text-lg font-semibold text-dark dark:text-white">
+                      {event.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted dark:text-gray-300 leading-relaxed">
+                      {event.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </div>
