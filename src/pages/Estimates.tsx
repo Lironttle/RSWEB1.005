@@ -210,7 +210,7 @@ export default function Estimates() {
       <section
         className="relative min-h-[50vh] flex items-center"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2070&q=80)',
+          backgroundImage: 'url(/images/photos/rs%20team.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

@@ -197,7 +197,7 @@ export default function Careers() {
       <section
         className="relative min-h-[60vh] flex items-center"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+          backgroundImage: 'url(/images/photos/rs%20team.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

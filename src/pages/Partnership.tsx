@@ -203,7 +203,7 @@ export default function Partnership() {
       <section
         className="relative min-h-[60vh] flex items-center"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+          backgroundImage: 'url(/images/photos/rs%20team.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
