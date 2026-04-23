@@ -8,8 +8,9 @@ const navItems = [
   { label: 'Home', path: '/' },
   { label: 'Services', path: '/services' },
   { label: 'Estimates', path: '/estimates' },
-  { label: 'About Us', path: '/about' },
   { label: 'Careers', path: '/careers' },
+  { label: 'Partnership', path: '/partnership' },
+  { label: 'About Us', path: '/about' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -81,7 +82,7 @@ export default function Header() {
                 <Link
                   key={item.label}
                   to={item.path}
-                  className={`relative px-4 py-2 text-sm font-medium transition-colors group ${
+                  className={`relative px-4 py-2 text-sm font-medium uppercase tracking-wide transition-colors group ${
                     location.pathname === item.path ||
                     (item.path !== '/' && location.pathname.startsWith(item.path))
                       ? 'text-primary'
@@ -141,7 +142,7 @@ export default function Header() {
                   <Link
                     key={item.label}
                     to={item.path}
-                    className={`block px-6 py-3 text-lg font-medium transition-colors relative ${
+                    className={`block px-6 py-3 text-lg font-medium uppercase tracking-wide transition-colors relative ${
                       location.pathname === item.path ||
                       (item.path !== '/' && location.pathname.startsWith(item.path))
                         ? 'text-primary bg-primary/5 border-l-4 border-primary'

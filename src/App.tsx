@@ -7,6 +7,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Estimates from './pages/Estimates';
 import Careers from './pages/Careers';
+import Partnership from './pages/Partnership';
 import Placeholder from './pages/Placeholder';
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="about" element={<About />} />
           <Route path="accreditations" element={<Placeholder />} />
           <Route path="careers" element={<Careers />} />
+          <Route path="partnership" element={<Partnership />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
