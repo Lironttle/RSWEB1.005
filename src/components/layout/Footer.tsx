@@ -4,19 +4,19 @@ export default function Footer() {
   return (
     <footer className="bg-white dark:bg-surface-dark">
       <div className="container-custom">
-        <div className="py-10 sm:py-16 flex flex-col md:flex-row items-center md:items-start justify-between gap-8 sm:gap-12">
+        <div className="py-8 sm:py-12 md:py-16 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 sm:gap-10 md:gap-12">
           <div className="flex flex-col items-center md:items-start">
             <img
               src="/images/logo/RS LOGO.png"
               alt="RS Construction and Property Services Ltd"
-              className="h-16 w-auto mb-6"
+              className="h-12 sm:h-14 md:h-16 w-auto mb-4 sm:mb-6"
             />
-            <div className="flex gap-4">
+            <div className="flex gap-3 sm:gap-4">
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-dark dark:bg-surface-border text-white flex items-center justify-center hover:bg-primary transition-colors"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-dark dark:bg-surface-border text-white flex items-center justify-center hover:bg-primary transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
@@ -25,7 +25,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-dark dark:bg-surface-border text-white flex items-center justify-center hover:bg-primary transition-colors"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-dark dark:bg-surface-border text-white flex items-center justify-center hover:bg-primary transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={18} />
@@ -33,9 +33,9 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="text-center md:text-left">
-            <h4 className="text-dark dark:text-white text-lg font-semibold mb-6">Contact Us</h4>
-            <ul className="space-y-4">
+          <div className="text-center md:text-left w-full md:w-auto">
+            <h4 className="text-dark dark:text-white text-base sm:text-lg font-semibold mb-4 sm:mb-6">Contact Us</h4>
+            <ul className="space-y-3 sm:space-y-4">
               <li>
                 <a
                   href="tel:02074732842"
@@ -48,7 +48,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:info@rs-construction.com"
-                  className="flex items-center md:items-start gap-3 text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm justify-center md:justify-start"
+                  className="flex items-center md:items-start gap-3 text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm justify-center md:justify-start break-all"
                 >
                   <Mail size={18} className="flex-shrink-0" />
                   info@rs-construction.com

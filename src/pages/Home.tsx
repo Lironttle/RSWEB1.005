@@ -120,7 +120,7 @@ export default function Home() {
 
   return (
     <main>
-      <section className="relative min-h-screen flex items-center justify-center">
+      <section className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -131,7 +131,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-dark/30" />
         </div>
 
-        <div className="relative container-custom text-center pt-24 pb-32 sm:pt-32 sm:pb-48">
+        <div className="relative container-custom text-center pt-20 pb-40 sm:pt-32 sm:pb-48">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -141,9 +141,9 @@ export default function Home() {
             <motion.div
               variants={fadeInUp}
               transition={{ duration: 0.6 }}
-              className="mb-8"
+              className="mb-6 sm:mb-8"
             >
-              <span className="inline-block px-5 py-2.5 bg-primary text-white font-medium text-sm tracking-wider uppercase rounded-full shadow-lg">
+              <span className="inline-block px-4 sm:px-5 py-2 sm:py-2.5 bg-primary text-white font-medium text-xs sm:text-sm tracking-wider uppercase rounded-full shadow-lg">
                 Trusted Since 2010
               </span>
             </motion.div>
@@ -151,7 +151,7 @@ export default function Home() {
             <motion.h1
               variants={fadeInUp}
               transition={{ duration: 0.6 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-6 sm:mb-8"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-4 sm:mb-8"
             >
               Building Excellence,
               <br />
@@ -161,7 +161,7 @@ export default function Home() {
             <motion.p
               variants={fadeInUp}
               transition={{ duration: 0.6 }}
-              className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed"
             >
               RS Construction and Property Services Ltd provides innovative
               construction solutions with 16 years of industry excellence and 70+
@@ -171,11 +171,11 @@ export default function Home() {
             <motion.div
               variants={fadeInUp}
               transition={{ duration: 0.6 }}
-              className="flex flex-wrap justify-center gap-4"
+              className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 px-4 sm:px-0"
             >
               <Link
                 to="/estimates"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 group"
+                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 group"
               >
                 Get Free Estimate
                 <ArrowRight
@@ -185,7 +185,7 @@ export default function Home() {
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-dark"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300 hover:bg-white hover:text-dark"
               >
                 Our Services
               </Link>
@@ -201,20 +201,20 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 1 }}
               className="bg-white/90 dark:bg-surface/90 backdrop-blur-lg shadow-2xl rounded-2xl overflow-hidden"
             >
-              <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-surface-border">
+              <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-surface-border">
                 {trustIndicators.map((item) => (
                   <div
                     key={item.description}
-                    className="p-8 lg:p-10 text-center"
+                    className="p-5 sm:p-8 lg:p-10 text-center"
                   >
-                    <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 rounded-full mb-4">
-                      <item.icon className="w-7 h-7 text-primary" />
+                    <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-full mb-3 sm:mb-4">
+                      <item.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
                     </div>
-                    <div className="flex items-baseline justify-center gap-2 mb-2">
-                      <span className="text-4xl lg:text-5xl font-serif text-dark dark:text-white">
+                    <div className="flex items-baseline justify-center gap-2 mb-1 sm:mb-2">
+                      <span className="text-3xl sm:text-4xl lg:text-5xl font-serif text-dark dark:text-white">
                         {item.value}
                       </span>
-                      <span className="text-lg text-muted dark:text-gray-400 font-medium">
+                      <span className="text-base sm:text-lg text-muted dark:text-gray-400 font-medium">
                         {item.label}
                       </span>
                     </div>
@@ -227,25 +227,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding bg-white dark:bg-dark pt-28 sm:pt-40 md:pt-48">
+      <section className="section-padding bg-white dark:bg-dark pt-40 sm:pt-44 md:pt-48">
         <div className="container-custom">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-10 sm:mb-16"
           >
             <motion.div variants={fadeInUp} className="mb-4">
               <span className="inline-block w-12 h-1 bg-primary rounded-full" />
             </motion.div>
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-serif text-dark dark:text-white mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-serif text-dark dark:text-white mb-4 sm:mb-6"
             >
               Our Services
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-lg">
+            <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-base sm:text-lg">
               Comprehensive construction solutions for every project
             </motion.p>
           </motion.div>
@@ -255,7 +255,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           >
             {services.map((service) => (
               <motion.div
@@ -265,15 +265,15 @@ export default function Home() {
               >
                 <Link
                   to={service.link}
-                  className="group block bg-white dark:bg-surface-dark p-8 h-full shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-lg border border-gray-100 dark:border-surface-border"
+                  className="group block bg-white dark:bg-surface-dark p-6 sm:p-8 h-full shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-lg border border-gray-100 dark:border-surface-border"
                 >
-                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
-                    <service.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-primary transition-colors duration-300">
+                    <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h3 className="text-xl font-semibold text-dark dark:text-white mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold text-dark dark:text-white mb-2 sm:mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-muted dark:text-gray-400 mb-4 leading-relaxed">{service.description}</p>
+                  <p className="text-muted dark:text-gray-400 text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">{service.description}</p>
                   <span className="inline-flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Learn More
                     <ArrowRight
@@ -291,11 +291,11 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center mt-12"
+            className="text-center mt-8 sm:mt-12"
           >
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-full font-medium hover:bg-primary hover:text-white transition-all duration-300 group"
+              className="inline-flex items-center gap-2 border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base hover:bg-primary hover:text-white transition-all duration-300 group"
             >
               View All Services
               <ArrowRight
@@ -316,14 +316,14 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-10 sm:mb-16"
           >
             <motion.div variants={fadeInUp} className="mb-4">
               <span className="inline-block w-12 h-1 bg-primary rounded-full" />
             </motion.div>
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-serif text-dark dark:text-white mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-serif text-dark dark:text-white mb-4 sm:mb-6"
             >
               What Our Clients Say
             </motion.h2>
@@ -334,21 +334,21 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="grid md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
           >
             {testimonials.map((testimonial) => (
               <motion.div
                 key={testimonial.client}
                 variants={fadeInUp}
                 transition={{ duration: 0.6 }}
-                className="bg-white dark:bg-surface rounded-2xl p-8 lg:p-10 shadow-lg"
+                className="bg-white dark:bg-surface rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg"
               >
-                <Quote className="w-10 h-10 text-primary mb-6" />
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+                <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-primary mb-4 sm:mb-6" />
+                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6 sm:mb-8">
                   "{testimonial.quote}"
                 </p>
                 <div>
-                  <p className="font-semibold text-dark dark:text-white text-lg">
+                  <p className="font-semibold text-dark dark:text-white text-base sm:text-lg">
                     {testimonial.client}
                   </p>
                   <p className="text-muted dark:text-gray-400 text-sm">{testimonial.role}</p>
@@ -363,7 +363,7 @@ export default function Home() {
 
       <section className="section-padding bg-light dark:bg-surface-dark">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -373,10 +373,10 @@ export default function Home() {
               <span className="inline-block text-primary text-sm font-medium tracking-wider uppercase mb-4">
                 About Us
               </span>
-              <h2 className="text-4xl md:text-5xl font-serif text-dark dark:text-white mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-dark dark:text-white mb-4 sm:mb-6">
                 Why Choose RS Construction?
               </h2>
-              <p className="text-muted dark:text-gray-400 text-lg mb-8 leading-relaxed">
+              <p className="text-muted dark:text-gray-400 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
                 With over 16 years of experience in the construction industry, RS
                 Construction and Property Services Ltd has established itself as a
                 trusted partner for residential and commercial projects across the UK.
@@ -416,9 +416,9 @@ export default function Home() {
                   alt="Construction site"
                   className="w-full h-auto shadow-2xl rounded-lg"
                 />
-                <div className="absolute -bottom-4 -left-4 sm:-bottom-8 sm:-left-8 bg-primary text-white p-4 sm:p-8 shadow-xl">
-                  <div className="text-3xl sm:text-5xl font-serif mb-1 sm:mb-2">16+</div>
-                  <div className="text-sm uppercase tracking-wider">
+                <div className="absolute -bottom-3 -left-3 sm:-bottom-8 sm:-left-8 bg-primary text-white p-3 sm:p-6 md:p-8 shadow-xl">
+                  <div className="text-2xl sm:text-4xl md:text-5xl font-serif mb-0.5 sm:mb-2">16+</div>
+                  <div className="text-xs sm:text-sm uppercase tracking-wider">
                     Years of Excellence
                   </div>
                 </div>
@@ -435,30 +435,30 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
           >
-            <motion.div variants={fadeInUp} className="text-center p-8">
-              <Shield className="w-12 h-12 text-primary mx-auto mb-6" />
-              <h3 className="text-2xl font-serif mb-4">Fully Accredited</h3>
-              <p className="text-gray-400">
+            <motion.div variants={fadeInUp} className="text-center p-4 sm:p-6 md:p-8">
+              <Shield className="w-10 h-10 sm:w-12 sm:h-12 text-primary mx-auto mb-4 sm:mb-6" />
+              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4">Fully Accredited</h3>
+              <p className="text-sm sm:text-base text-gray-400">
                 CHAS, Constructionline, SafeContractor, and SSIP certified for your
                 peace of mind.
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="text-center p-8">
-              <Award className="w-12 h-12 text-primary mx-auto mb-6" />
-              <h3 className="text-2xl font-serif mb-4">Quality Guaranteed</h3>
-              <p className="text-gray-400">
+            <motion.div variants={fadeInUp} className="text-center p-4 sm:p-6 md:p-8">
+              <Award className="w-10 h-10 sm:w-12 sm:h-12 text-primary mx-auto mb-4 sm:mb-6" />
+              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4">Quality Guaranteed</h3>
+              <p className="text-sm sm:text-base text-gray-400">
                 We deliver exceptional craftsmanship on every project, backed by
                 comprehensive warranties.
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="text-center p-8">
-              <Users className="w-12 h-12 text-primary mx-auto mb-6" />
-              <h3 className="text-2xl font-serif mb-4">Expert Team</h3>
-              <p className="text-gray-400">
+            <motion.div variants={fadeInUp} className="text-center p-4 sm:p-6 md:p-8">
+              <Users className="w-10 h-10 sm:w-12 sm:h-12 text-primary mx-auto mb-4 sm:mb-6" />
+              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4">Expert Team</h3>
+              <p className="text-sm sm:text-base text-gray-400">
                 Our skilled professionals bring decades of combined experience to
                 every project.
               </p>
@@ -468,7 +468,7 @@ export default function Home() {
       </section>
 
       <section
-        className="relative py-20 sm:py-32 bg-cover bg-center bg-fixed"
+        className="relative py-14 sm:py-20 md:py-32 bg-cover bg-center bg-fixed"
         style={{
           backgroundImage:
             'url(https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2070&q=80)',
@@ -482,17 +482,17 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif text-white mb-3 sm:mb-6">
               Ready to Start Your Project?
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto">
+            <p className="text-base sm:text-xl text-gray-300 mb-6 sm:mb-10 max-w-2xl mx-auto">
               Get in touch with our team today for a free, no-obligation estimate
               on your construction project.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
               <Link
                 to="/estimates"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-xl group"
+                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300 hover:shadow-xl group"
               >
                 Request Free Estimate
                 <ArrowRight
@@ -502,7 +502,7 @@ export default function Home() {
               </Link>
               <a
                 href="tel:02074732842"
-                className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-dark"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300 hover:bg-white hover:text-dark"
               >
                 Call 020 7473 2842
               </a>

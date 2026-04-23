@@ -195,7 +195,7 @@ export default function Careers() {
   return (
     <main>
       <section
-        className="relative min-h-[60vh] flex items-center"
+        className="relative min-h-[50vh] sm:min-h-[60vh] flex items-center"
         style={{
           backgroundImage: 'url(/images/photos/rs%20team.jpg)',
           backgroundSize: 'cover',
@@ -204,7 +204,7 @@ export default function Careers() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-white/80 dark:from-dark/80 via-white/60 dark:via-dark/60 to-white/30 dark:to-dark/30" />
 
-        <div className="relative container-custom py-20 sm:py-32">
+        <div className="relative container-custom py-14 sm:py-24 md:py-32">
           <motion.nav
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -222,8 +222,8 @@ export default function Careers() {
             transition={{ duration: 0.6 }}
             className="mb-4 sm:mb-6"
           >
-            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 sm:mb-8">
-              <Briefcase className="w-8 h-8 text-primary" />
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-8">
+              <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
             </div>
           </motion.div>
 
@@ -240,7 +240,7 @@ export default function Careers() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-muted dark:text-gray-400 max-w-2xl mb-8 sm:mb-10"
+            className="text-base sm:text-xl text-muted dark:text-gray-400 max-w-2xl mb-6 sm:mb-10"
           >
             Build your career with one of London's most trusted construction companies.
             We're always looking for talented individuals to join our growing team.
@@ -250,24 +250,24 @@ export default function Careers() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-3 sm:gap-4"
           >
-            <div className="inline-flex items-center gap-3 bg-white dark:bg-surface shadow-lg px-6 py-4 rounded-xl">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                <Clock className="w-5 h-5 text-primary" />
+            <div className="inline-flex items-center gap-2 sm:gap-3 bg-white dark:bg-surface shadow-lg px-4 sm:px-6 py-3 sm:py-4 rounded-xl">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               </div>
               <div>
-                <div className="text-2xl font-serif text-dark dark:text-white">16+</div>
-                <div className="text-sm text-muted dark:text-gray-400">Years in Business</div>
+                <div className="text-lg sm:text-2xl font-serif text-dark dark:text-white">16+</div>
+                <div className="text-xs sm:text-sm text-muted dark:text-gray-400">Years in Business</div>
               </div>
             </div>
-            <div className="inline-flex items-center gap-3 bg-white dark:bg-surface shadow-lg px-6 py-4 rounded-xl">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                <Users className="w-5 h-5 text-primary" />
+            <div className="inline-flex items-center gap-2 sm:gap-3 bg-white dark:bg-surface shadow-lg px-4 sm:px-6 py-3 sm:py-4 rounded-xl">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               </div>
               <div>
-                <div className="text-2xl font-serif text-dark dark:text-white">50+</div>
-                <div className="text-sm text-muted dark:text-gray-400">Team Members</div>
+                <div className="text-lg sm:text-2xl font-serif text-dark dark:text-white">50+</div>
+                <div className="text-xs sm:text-sm text-muted dark:text-gray-400">Team Members</div>
               </div>
             </div>
           </motion.div>
@@ -281,18 +281,18 @@ export default function Careers() {
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-10 sm:mb-16"
           >
             <motion.div variants={fadeInUp} className="mb-4">
               <span className="inline-block w-12 h-1 bg-primary rounded-full" />
             </motion.div>
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-serif text-dark dark:text-white mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-serif text-dark dark:text-white mb-4 sm:mb-6"
             >
               Why RS Construction?
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-lg">
+            <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-base sm:text-lg">
               Join a team that values your growth, rewards your effort, and treats you like family
             </motion.p>
           </motion.div>
@@ -302,21 +302,21 @@ export default function Careers() {
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           >
             {whyWorkWithUs.map((item) => (
               <motion.div
                 key={item.title}
                 variants={fadeInUp}
-                className="bg-gray-50 dark:bg-surface-dark p-8 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                className="bg-gray-50 dark:bg-surface-dark p-6 sm:p-8 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <item.icon className="w-7 h-7 text-primary" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                  <item.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-dark dark:text-white mb-3">
+                <h3 className="text-lg sm:text-xl font-semibold text-dark dark:text-white mb-2 sm:mb-3">
                   {item.title}
                 </h3>
-                <p className="text-muted dark:text-gray-400 leading-relaxed">
+                <p className="text-muted dark:text-gray-400 text-sm sm:text-base leading-relaxed">
                   {item.description}
                 </p>
               </motion.div>
@@ -332,18 +332,18 @@ export default function Careers() {
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-10 sm:mb-16"
           >
             <motion.div variants={fadeInUp} className="mb-4">
               <span className="inline-block w-12 h-1 bg-primary rounded-full" />
             </motion.div>
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-serif text-dark dark:text-white mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-serif text-dark dark:text-white mb-4 sm:mb-6"
             >
               Employee Benefits
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-lg">
+            <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-base sm:text-lg">
               We take care of our team with a comprehensive benefits package
             </motion.p>
           </motion.div>
@@ -353,16 +353,16 @@ export default function Careers() {
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4"
           >
             {benefits.map((benefit) => (
               <motion.div
                 key={benefit.text}
                 variants={fadeInUp}
-                className="bg-white dark:bg-surface p-5 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-surface p-4 sm:p-5 rounded-xl flex items-center gap-3 sm:gap-4 hover:shadow-md transition-shadow"
               >
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <benefit.icon className="w-5 h-5 text-primary" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <benefit.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                 </div>
                 <span className="text-dark dark:text-gray-200 text-sm font-medium">{benefit.text}</span>
               </motion.div>
@@ -378,18 +378,18 @@ export default function Careers() {
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-10 sm:mb-16"
           >
             <motion.div variants={fadeInUp} className="mb-4">
               <span className="inline-block w-12 h-1 bg-primary rounded-full" />
             </motion.div>
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-serif text-dark dark:text-white mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-serif text-dark dark:text-white mb-4 sm:mb-6"
             >
               How to Apply
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-lg">
+            <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-base sm:text-lg">
               Our simple application process gets you started quickly
             </motion.p>
           </motion.div>
@@ -403,23 +403,23 @@ export default function Careers() {
           >
             <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 dark:bg-surface-border -translate-y-1/2 z-0" />
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative z-10">
               {applicationSteps.map((step, index) => (
                 <motion.div
                   key={step.title}
                   variants={fadeInUp}
                   className="text-center"
                 >
-                  <div className="w-20 h-20 bg-white dark:bg-surface-dark border-2 border-primary rounded-full flex items-center justify-center mx-auto mb-6 relative">
-                    <step.icon className="w-8 h-8 text-primary" />
-                    <span className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white dark:bg-surface-dark border-2 border-primary rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 relative">
+                    <step.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+                    <span className="absolute -top-2 -right-2 w-7 h-7 sm:w-8 sm:h-8 bg-primary text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">
                       {index + 1}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-dark dark:text-white mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold text-dark dark:text-white mb-2 sm:mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-muted dark:text-gray-400">
+                  <p className="text-muted dark:text-gray-400 text-sm sm:text-base">
                     {step.description}
                   </p>
                 </motion.div>
@@ -437,18 +437,18 @@ export default function Careers() {
               whileInView="visible"
               viewport={{ once: true, margin: '-100px' }}
               variants={staggerContainer}
-              className="text-center mb-12"
+              className="text-center mb-8 sm:mb-12"
             >
               <motion.div variants={fadeInUp} className="mb-4">
                 <span className="inline-block w-12 h-1 bg-primary rounded-full" />
               </motion.div>
               <motion.h2
                 variants={fadeInUp}
-                className="text-4xl md:text-5xl font-serif text-dark dark:text-white mb-6"
+                className="text-3xl sm:text-4xl md:text-5xl font-serif text-dark dark:text-white mb-4 sm:mb-6"
               >
                 Apply Now
               </motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-lg">
+              <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-base sm:text-lg">
                 Take the first step towards your new career
               </motion.p>
             </motion.div>
@@ -458,15 +458,15 @@ export default function Careers() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white dark:bg-surface rounded-2xl shadow-xl p-5 sm:p-8 md:p-12"
+              className="bg-white dark:bg-surface rounded-2xl shadow-xl p-4 sm:p-8 md:p-12"
             >
               {submitStatus === 'success' ? (
-                <div className="text-center py-12">
-                  <div className="w-20 h-20 bg-emerald-100 dark:bg-emerald-950/30 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle className="w-10 h-10 text-emerald-600" />
+                <div className="text-center py-8 sm:py-12">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-emerald-100 dark:bg-emerald-950/30 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                    <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-emerald-600" />
                   </div>
-                  <h3 className="text-2xl font-serif text-dark dark:text-white mb-4">Application Submitted!</h3>
-                  <p className="text-muted dark:text-gray-400 mb-8">
+                  <h3 className="text-xl sm:text-2xl font-serif text-dark dark:text-white mb-3 sm:mb-4">Application Submitted!</h3>
+                  <p className="text-sm sm:text-base text-muted dark:text-gray-400 mb-6 sm:mb-8">
                     Thank you for your interest in joining RS Construction. Our HR team will review your application and be in touch within 5 working days.
                   </p>
                   <button
@@ -478,8 +478,8 @@ export default function Careers() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label htmlFor="fullName" className="block text-sm font-medium text-dark dark:text-gray-200 mb-2">
                         Full Name <span className="text-primary">*</span>
@@ -512,7 +512,7 @@ export default function Careers() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-dark dark:text-gray-200 mb-2">
                         Phone Number <span className="text-primary">*</span>
@@ -561,17 +561,17 @@ export default function Careers() {
                         onChange={handleFileChange}
                         className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                       />
-                      <div className="flex items-center gap-4 px-4 py-3 border border-gray-200 dark:border-surface-border border-dashed rounded-lg bg-gray-50 dark:bg-surface-dark hover:bg-gray-100 dark:hover:bg-surface transition-colors">
-                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                          <FileText className="w-5 h-5 text-primary" />
+                      <div className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 py-3 border border-gray-200 dark:border-surface-border border-dashed rounded-lg bg-gray-50 dark:bg-surface-dark hover:bg-gray-100 dark:hover:bg-surface transition-colors">
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                         </div>
-                        <div>
+                        <div className="min-w-0">
                           {formData.cvFilename ? (
-                            <p className="text-dark dark:text-white font-medium">{formData.cvFilename}</p>
+                            <p className="text-sm sm:text-base text-dark dark:text-white font-medium truncate">{formData.cvFilename}</p>
                           ) : (
                             <>
-                              <p className="text-dark dark:text-white font-medium">Click to upload your CV</p>
-                              <p className="text-sm text-muted dark:text-gray-400">or drag and drop</p>
+                              <p className="text-sm sm:text-base text-dark dark:text-white font-medium">Click to upload your CV</p>
+                              <p className="text-xs sm:text-sm text-muted dark:text-gray-400">or drag and drop</p>
                             </>
                           )}
                         </div>
@@ -636,7 +636,7 @@ export default function Careers() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full bg-primary hover:bg-primary-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <>
@@ -657,7 +657,7 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="py-20 bg-primary">
+      <section className="py-12 sm:py-16 md:py-20 bg-primary">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -666,23 +666,23 @@ export default function Careers() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-serif text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-white mb-3 sm:mb-4">
               Have questions about working with us?
             </h2>
-            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-white/80 text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
               Get in touch with our team - we'd love to hear from you
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-gray-100 group"
+                className="inline-flex items-center justify-center gap-2 bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300 hover:bg-gray-100 group"
               >
                 <Mail size={18} />
                 Contact Us
               </Link>
               <a
                 href="tel:02074732842"
-                className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-primary"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300 hover:bg-white hover:text-primary"
               >
                 <Phone size={18} />
                 020 7473 2842

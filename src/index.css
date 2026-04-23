@@ -22,15 +22,15 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-white px-6 py-3 font-medium transition-all duration-300 hover:bg-primary-700 hover:shadow-lg;
+    @apply bg-primary text-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-medium transition-all duration-300 hover:bg-primary-700 hover:shadow-lg;
   }
 
   .btn-outline {
-    @apply border-2 border-dark dark:border-white text-dark dark:text-white px-6 py-3 font-medium transition-all duration-300 hover:bg-dark dark:hover:bg-white hover:text-white dark:hover:text-dark;
+    @apply border-2 border-dark dark:border-white text-dark dark:text-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-medium transition-all duration-300 hover:bg-dark dark:hover:bg-white hover:text-white dark:hover:text-dark;
   }
 
   .section-padding {
-    @apply py-14 sm:py-20 md:py-28 lg:py-32;
+    @apply py-12 sm:py-16 md:py-24 lg:py-32;
   }
 
   .container-custom {

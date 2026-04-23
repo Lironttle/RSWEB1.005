@@ -73,7 +73,7 @@ export default function Header() {
               <img
                 src="/images/logo/RS LOGO.png"
                 alt="RS Construction and Property Services Ltd"
-                className="h-14 w-auto"
+                className="h-10 sm:h-12 md:h-14 w-auto"
               />
             </Link>
 
@@ -123,11 +123,11 @@ export default function Header() {
             className="fixed inset-y-0 left-0 w-full max-w-sm bg-white dark:bg-surface-dark shadow-2xl lg:hidden z-50"
           >
             <div className="flex flex-col h-full">
-              <div className="flex items-center justify-between p-6 border-b dark:border-surface-border">
+              <div className="flex items-center justify-between p-4 sm:p-6 border-b dark:border-surface-border">
                 <img
                   src="/images/logo/RS LOGO.png"
                   alt="RS Construction"
-                  className="h-10 w-auto"
+                  className="h-8 sm:h-10 w-auto"
                 />
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -137,12 +137,12 @@ export default function Header() {
                 </button>
               </div>
 
-              <nav className="flex-1 overflow-y-auto py-6">
+              <nav className="flex-1 overflow-y-auto py-4 sm:py-6">
                 {navItems.map((item) => (
                   <Link
                     key={item.label}
                     to={item.path}
-                    className={`block px-6 py-3 text-lg font-medium uppercase tracking-wide transition-colors relative ${
+                    className={`block px-5 sm:px-6 py-2.5 sm:py-3 text-base sm:text-lg font-medium uppercase tracking-wide transition-colors relative ${
                       location.pathname === item.path ||
                       (item.path !== '/' && location.pathname.startsWith(item.path))
                         ? 'text-primary bg-primary/5 border-l-4 border-primary'
@@ -154,17 +154,17 @@ export default function Header() {
                 ))}
               </nav>
 
-              <div className="p-6 border-t dark:border-surface-border bg-light dark:bg-surface">
+              <div className="p-4 sm:p-6 border-t dark:border-surface-border bg-light dark:bg-surface">
                 <a
                   href="tel:02074732842"
-                  className="flex items-center gap-3 text-dark dark:text-gray-300 hover:text-primary transition-colors mb-3"
+                  className="flex items-center gap-3 text-sm sm:text-base text-dark dark:text-gray-300 hover:text-primary transition-colors mb-2 sm:mb-3"
                 >
                   <Phone size={18} />
                   020 7473 2842
                 </a>
                 <a
                   href="mailto:info@rs-construction.com"
-                  className="flex items-center gap-3 text-dark dark:text-gray-300 hover:text-primary transition-colors"
+                  className="flex items-center gap-3 text-sm sm:text-base text-dark dark:text-gray-300 hover:text-primary transition-colors break-all"
                 >
                   <Mail size={18} />
                   info@rs-construction.com

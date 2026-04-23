@@ -109,7 +109,7 @@ export default function About() {
   return (
     <main>
       <section
-        className="relative min-h-[50vh] flex items-center"
+        className="relative min-h-[40vh] sm:min-h-[50vh] flex items-center"
         style={{
           backgroundImage: 'url(/images/photos/rs%20team.jpg)',
           backgroundSize: 'cover',
@@ -118,7 +118,7 @@ export default function About() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-white/80 dark:from-dark/80 via-white/60 dark:via-dark/60 to-white/30 dark:to-dark/30" />
 
-        <div className="relative container-custom py-20 sm:py-32">
+        <div className="relative container-custom py-14 sm:py-24 md:py-32">
           <motion.nav
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-dark dark:text-white mb-6"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-dark dark:text-white mb-4 sm:mb-6"
           >
             About RS Construction
           </motion.h1>
@@ -143,7 +143,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full font-medium"
+            className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-sm sm:text-base"
           >
             <span className="w-2 h-2 bg-primary rounded-full" />
             Established 2010
@@ -151,9 +151,9 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-white dark:bg-dark">
+      <section className="py-14 sm:py-20 md:py-28 bg-white dark:bg-dark">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -164,11 +164,11 @@ export default function About() {
                 <img
                   src="/images/photos/director.png"
                   alt="RS Construction Director"
-                  className="rounded-2xl w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
+                  className="rounded-2xl w-full h-[260px] sm:h-[400px] lg:h-[500px] object-cover"
                 />
-                <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-primary text-white p-4 sm:p-6 rounded-xl">
-                  <div className="text-4xl font-bold">16+</div>
-                  <div className="text-sm opacity-90">Years Experience</div>
+                <div className="absolute -bottom-3 -right-3 sm:-bottom-6 sm:-right-6 bg-primary text-white p-3 sm:p-6 rounded-xl">
+                  <div className="text-2xl sm:text-4xl font-bold">16+</div>
+                  <div className="text-xs sm:text-sm opacity-90">Years Experience</div>
                 </div>
               </div>
             </motion.div>
@@ -180,20 +180,20 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <span className="text-primary font-medium tracking-wide uppercase text-sm">Our Story</span>
-              <h2 className="text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3 mb-4 sm:mb-6">
                 Building Trust Since 2010
               </h2>
-              <p className="text-muted dark:text-gray-400 text-lg leading-relaxed mb-6">
+              <p className="text-muted dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
                 RS Construction and Property Services Ltd is a family-owned business established in 2010.
                 We've grown into a specialist contracting group with an ever-expanding client base built
                 on trust and quality.
               </p>
-              <p className="text-muted dark:text-gray-400 text-lg leading-relaxed mb-6">
+              <p className="text-muted dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
                 Our journey began with a simple commitment: deliver exceptional craftsmanship and genuine
                 care for every project. Today, we're proud to be one of London's most trusted construction
                 and property services providers.
               </p>
-              <p className="text-muted dark:text-gray-400 text-lg leading-relaxed">
+              <p className="text-muted dark:text-gray-400 text-base sm:text-lg leading-relaxed">
                 From residential renovations to commercial developments, our experienced team brings
                 dedication, expertise, and attention to detail to every job we undertake.
               </p>
@@ -202,36 +202,36 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-white dark:bg-dark">
+      <section className="py-14 sm:py-20 md:py-28 bg-white dark:bg-dark">
         <div className="container-custom">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
             <span className="text-primary font-medium tracking-wide uppercase text-sm">Our Journey</span>
-            <h2 className="text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3">
               Milestones Through the Years
             </h2>
           </motion.div>
 
-          <div className="relative max-w-3xl mx-auto py-4 px-4">
-            <div className="absolute left-[18px] top-0 h-full w-[2px] bg-gradient-to-b from-primary/60 to-primary-900/60 dark:from-primary/50 dark:to-primary-800/50" />
+          <div className="relative max-w-3xl mx-auto py-4 px-2 sm:px-4">
+            <div className="absolute left-[14px] sm:left-[18px] top-0 h-full w-[2px] bg-gradient-to-b from-primary/60 to-primary-900/60 dark:from-primary/50 dark:to-primary-800/50" />
 
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={staggerContainer}
-              className="space-y-12"
+              className="space-y-8 sm:space-y-12"
             >
               {timelineEvents.map((event) => (
                 <motion.div
                   key={event.year}
                   variants={fadeInUp}
-                  className="relative flex gap-6 items-start"
+                  className="relative flex gap-4 sm:gap-6 items-start"
                 >
                   <div className="relative z-10">
                     <div
@@ -270,17 +270,17 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-light dark:bg-surface-dark">
+      <section className="py-14 sm:py-20 md:py-28 bg-light dark:bg-surface-dark">
         <div className="container-custom">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <span className="text-primary font-medium tracking-wide uppercase text-sm">Why Choose Us</span>
-            <h2 className="text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3">
               Our Core Values
             </h2>
           </motion.div>
@@ -290,21 +290,21 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
           >
             {values.map((value) => (
               <motion.div
                 key={value.title}
                 variants={fadeInUp}
-                className="bg-white dark:bg-surface p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+                className="bg-white dark:bg-surface p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <value.icon className="w-7 h-7 text-primary" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                  <value.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-dark dark:text-white mb-3 uppercase tracking-wide">
+                <h3 className="text-lg sm:text-xl font-semibold text-dark dark:text-white mb-2 sm:mb-3 uppercase tracking-wide">
                   {value.title}
                 </h3>
-                <p className="text-muted dark:text-gray-400 leading-relaxed">
+                <p className="text-muted dark:text-gray-400 text-sm sm:text-base leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>
@@ -313,7 +313,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-20 md:py-28 bg-white dark:bg-dark">
+      <section className="relative overflow-hidden py-14 sm:py-20 md:py-28 bg-white dark:bg-dark">
         <svg
           className="absolute right-0 bottom-0 text-primary/10 dark:text-primary/15 pointer-events-none"
           fill="none"
@@ -338,35 +338,35 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="mx-auto mb-16 flex max-w-3xl flex-col items-center text-center"
+            className="mx-auto mb-10 sm:mb-16 flex max-w-3xl flex-col items-center text-center"
           >
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white">
-              <Users className="w-6 h-6" />
+            <div className="mb-4 sm:mb-6 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-primary text-white">
+              <Users className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <span className="text-primary font-medium tracking-wide uppercase text-sm">Meet the Team</span>
-            <h2 className="text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3">
               The People Behind RS Construction
             </h2>
           </motion.div>
 
           <div className="marquee-pause relative w-full overflow-hidden">
-            <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-16 sm:w-32 bg-gradient-to-r from-white to-transparent dark:from-dark" />
-            <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-16 sm:w-32 bg-gradient-to-l from-white to-transparent dark:from-dark" />
+            <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-10 sm:w-32 bg-gradient-to-r from-white to-transparent dark:from-dark" />
+            <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-10 sm:w-32 bg-gradient-to-l from-white to-transparent dark:from-dark" />
 
-            <div className="flex w-max gap-6 animate-marquee">
+            <div className="flex w-max gap-4 sm:gap-6 animate-marquee">
               {[...teamMembers, ...teamMembers].map((member, idx) => (
                 <div
                   key={`${member.name}-${idx}`}
-                  className="group flex w-56 sm:w-64 shrink-0 flex-col"
+                  className="group flex w-44 sm:w-56 md:w-64 shrink-0 flex-col"
                 >
-                  <div className="relative h-72 sm:h-80 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-primary-50 to-light dark:from-surface dark:to-surface-dark border border-gray-200/70 dark:border-surface-border">
+                  <div className="relative h-56 sm:h-72 md:h-80 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-primary-50 to-light dark:from-surface dark:to-surface-dark border border-gray-200/70 dark:border-surface-border">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <UserRound
-                        className="w-24 h-24 text-primary/30 dark:text-primary/40 transition-transform duration-500 group-hover:scale-110"
+                        className="w-16 h-16 sm:w-24 sm:h-24 text-primary/30 dark:text-primary/40 transition-transform duration-500 group-hover:scale-110"
                         strokeWidth={1.25}
                       />
                     </div>
-                    <div className="absolute bottom-0 w-full bg-white/85 dark:bg-surface/85 backdrop-blur-sm p-3">
+                    <div className="absolute bottom-0 w-full bg-white/85 dark:bg-surface/85 backdrop-blur-sm p-2 sm:p-3">
                       <h3 className="font-semibold text-dark dark:text-white text-sm sm:text-base truncate">
                         {member.name}
                       </h3>
@@ -382,9 +382,9 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-white dark:bg-dark">
+      <section className="py-14 sm:py-20 md:py-28 bg-white dark:bg-dark">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -392,20 +392,20 @@ export default function About() {
               transition={{ duration: 0.6 }}
             >
               <span className="text-primary font-medium tracking-wide uppercase text-sm">Service Area</span>
-              <h2 className="text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3 mb-4 sm:mb-6">
                 Serving London & Beyond
               </h2>
-              <p className="text-muted dark:text-gray-400 text-lg leading-relaxed mb-8">
+              <p className="text-muted dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
                 Based in East London, our services cover East, North, and Central London.
                 We've successfully completed projects across the greater London area and
                 continue to expand our reach to serve more communities.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {coverageAreas.map((area) => (
                   <div key={area.name} className="flex items-center gap-3">
-                    <MapPin className={`w-5 h-5 ${area.primary ? 'text-primary' : 'text-muted dark:text-gray-400'}`} />
-                    <span className={`${area.primary ? 'text-dark dark:text-white font-medium' : 'text-muted dark:text-gray-400'}`}>
+                    <MapPin className={`w-5 h-5 flex-shrink-0 ${area.primary ? 'text-primary' : 'text-muted dark:text-gray-400'}`} />
+                    <span className={`text-sm sm:text-base ${area.primary ? 'text-dark dark:text-white font-medium' : 'text-muted dark:text-gray-400'}`}>
                       {area.name}
                       {area.primary && <span className="text-primary ml-2">(Headquarters)</span>}
                     </span>
@@ -424,14 +424,14 @@ export default function About() {
               <img
                 src="/images/photos/london.view.webp"
                 alt="London view"
-                className="rounded-2xl w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
+                className="rounded-2xl w-full h-[220px] sm:h-[400px] lg:h-[500px] object-cover"
               />
             </motion.div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-dark">
+      <section className="py-12 sm:py-16 md:py-24 bg-dark">
         <div className="container-custom text-center">
           <motion.div
             initial="hidden"
@@ -440,16 +440,16 @@ export default function About() {
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif text-white mb-3 sm:mb-6">
               Get in Touch for a No-Obligation Quote
             </h2>
-            <p className="text-lg sm:text-xl text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto">
+            <p className="text-base sm:text-xl text-gray-400 mb-6 sm:mb-10 max-w-2xl mx-auto">
               Ready to discuss your project? Our team is here to help with expert
               advice and competitive pricing.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 group"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300 group"
             >
               Contact Us
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

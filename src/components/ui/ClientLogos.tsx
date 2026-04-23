@@ -52,14 +52,14 @@ const logos: Logo[] = [
 
 export default function ClientLogos() {
   return (
-    <section className="py-16 bg-white dark:bg-dark">
+    <section className="py-10 sm:py-14 md:py-16 bg-white dark:bg-dark">
       <div className="container-custom flex flex-col items-center text-center">
-        <h2 className="text-3xl md:text-4xl font-serif text-dark dark:text-white">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-dark dark:text-white">
           Our Clients
         </h2>
-        <p className="text-muted dark:text-gray-400 mt-2">Trusted by leading organisations across London</p>
+        <p className="text-sm sm:text-base text-muted dark:text-gray-400 mt-2">Trusted by leading organisations across London</p>
       </div>
-      <div className="pt-10 md:pt-12">
+      <div className="pt-8 md:pt-12">
         <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
           <Carousel
             opts={{ loop: true }}
@@ -71,19 +71,19 @@ export default function ClientLogos() {
                   key={logo.id}
                   className="flex basis-1/2 justify-center pl-0 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
                 >
-                  <div className="mx-8 flex shrink-0 items-center justify-center dark:bg-white dark:rounded-lg dark:p-2">
+                  <div className="mx-4 sm:mx-6 md:mx-8 flex shrink-0 items-center justify-center dark:bg-white dark:rounded-lg dark:p-2">
                     <img
                       src={logo.image}
                       alt={logo.description}
-                      className="h-20 w-auto max-w-[160px] object-contain"
+                      className="h-14 sm:h-16 md:h-20 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-[160px] object-contain"
                     />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
           </Carousel>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white dark:from-dark to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white dark:from-dark to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-10 md:w-12 bg-gradient-to-r from-white dark:from-dark to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-10 md:w-12 bg-gradient-to-l from-white dark:from-dark to-transparent" />
         </div>
       </div>
     </section>

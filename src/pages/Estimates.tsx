@@ -208,7 +208,7 @@ export default function Estimates() {
   return (
     <main>
       <section
-        className="relative min-h-[50vh] flex items-center"
+        className="relative min-h-[40vh] sm:min-h-[50vh] flex items-center"
         style={{
           backgroundImage: 'url(/images/photos/rs%20team.jpg)',
           backgroundSize: 'cover',
@@ -217,7 +217,7 @@ export default function Estimates() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-white/80 dark:from-dark/80 via-white/60 dark:via-dark/60 to-white/30 dark:to-dark/30" />
 
-        <div className="relative container-custom py-20 sm:py-32">
+        <div className="relative container-custom py-14 sm:py-24 md:py-32">
           <motion.nav
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -233,7 +233,7 @@ export default function Estimates() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-dark dark:text-white mb-6"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-dark dark:text-white mb-4 sm:mb-6"
           >
             Request a Free Estimate
           </motion.h1>
@@ -242,7 +242,7 @@ export default function Estimates() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-muted dark:text-gray-400 max-w-2xl leading-relaxed"
+            className="text-base sm:text-lg text-muted dark:text-gray-400 max-w-2xl leading-relaxed"
           >
             Tell us about your project and we'll get back within 24 hours with a
             detailed, no-obligation quote.
@@ -250,9 +250,9 @@ export default function Estimates() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-light dark:bg-surface-dark">
+      <section className="py-14 sm:py-20 md:py-28 bg-light dark:bg-surface-dark">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -260,7 +260,7 @@ export default function Estimates() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-2"
             >
-              <div className="bg-white dark:bg-surface rounded-2xl shadow-lg p-5 sm:p-8 md:p-10">
+              <div className="bg-white dark:bg-surface rounded-2xl shadow-lg p-4 sm:p-8 md:p-10">
                 {submitStatus === 'success' && (
                   <div className="mb-8 p-4 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
@@ -279,10 +279,10 @@ export default function Estimates() {
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
                   <div>
-                    <h3 className="text-lg font-semibold text-dark dark:text-white mb-4">Personal Information</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <h3 className="text-base sm:text-lg font-semibold text-dark dark:text-white mb-3 sm:mb-4">Personal Information</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-dark dark:text-gray-200 mb-2">
                           Name <span className="text-primary">*</span>
@@ -339,9 +339,9 @@ export default function Estimates() {
                     </div>
                   </div>
 
-                  <div className="border-t border-gray-100 dark:border-surface-border pt-8">
-                    <h3 className="text-lg font-semibold text-dark dark:text-white mb-4">Project Details</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
+                  <div className="border-t border-gray-100 dark:border-surface-border pt-6 sm:pt-8">
+                    <h3 className="text-base sm:text-lg font-semibold text-dark dark:text-white mb-3 sm:mb-4">Project Details</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                       <div>
                         <label htmlFor="propertyType" className="block text-sm font-medium text-dark dark:text-gray-200 mb-2">
                           Property Type
@@ -434,7 +434,7 @@ export default function Estimates() {
                     </div>
                   </div>
 
-                  <div className="border-t border-gray-100 dark:border-surface-border pt-8">
+                  <div className="border-t border-gray-100 dark:border-surface-border pt-6 sm:pt-8">
                     <label htmlFor="description" className="block text-sm font-medium text-dark dark:text-gray-200 mb-2">
                       Project Description
                     </label>
@@ -449,7 +449,7 @@ export default function Estimates() {
                     />
                   </div>
 
-                  <div className="border-t border-gray-100 dark:border-surface-border pt-8">
+                  <div className="border-t border-gray-100 dark:border-surface-border pt-6 sm:pt-8">
                     <label className="block text-sm font-medium text-dark dark:text-gray-200 mb-2">
                       Attach Plans or Photos
                     </label>
@@ -457,13 +457,13 @@ export default function Estimates() {
                       onDragOver={(e) => e.preventDefault()}
                       onDrop={handleFileDrop}
                       onClick={() => fileInputRef.current?.click()}
-                      className="border-2 border-dashed border-gray-200 dark:border-surface-border rounded-lg p-8 text-center cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-colors"
+                      className="border-2 border-dashed border-gray-200 dark:border-surface-border rounded-lg p-4 sm:p-6 md:p-8 text-center cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-colors"
                     >
-                      <Upload className="w-10 h-10 text-gray-400 mx-auto mb-4" />
-                      <p className="text-muted dark:text-gray-400 mb-2">
+                      <Upload className="w-8 h-8 sm:w-10 sm:h-10 text-gray-400 mx-auto mb-2 sm:mb-4" />
+                      <p className="text-sm sm:text-base text-muted dark:text-gray-400 mb-2">
                         Drag and drop files here, or click to browse
                       </p>
-                      <p className="text-sm text-gray-400">
+                      <p className="text-xs sm:text-sm text-gray-400">
                         Supports images and PDFs (max 5 files)
                       </p>
                       <input
@@ -502,7 +502,7 @@ export default function Estimates() {
                     )}
                   </div>
 
-                  <div className="border-t border-gray-100 dark:border-surface-border pt-8">
+                  <div className="border-t border-gray-100 dark:border-surface-border pt-6 sm:pt-8">
                     <label className="flex items-start gap-3 cursor-pointer">
                       <input
                         type="checkbox"
@@ -524,7 +524,7 @@ export default function Estimates() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 disabled:bg-primary/50 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 disabled:bg-primary/50 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium text-sm sm:text-base transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
                   >
                     {isSubmitting ? (
                       <>
@@ -546,12 +546,12 @@ export default function Estimates() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-1"
             >
-              <div className="bg-white dark:bg-surface rounded-2xl shadow-lg p-8 sticky top-40">
-                <h3 className="text-xl font-serif text-dark dark:text-white mb-6">
+              <div className="bg-white dark:bg-surface rounded-2xl shadow-lg p-6 sm:p-8 lg:sticky lg:top-28">
+                <h3 className="text-lg sm:text-xl font-serif text-dark dark:text-white mb-4 sm:mb-6">
                   Why Choose RS Construction?
                 </h3>
 
-                <ul className="space-y-4">
+                <ul className="space-y-3 sm:space-y-4">
                   {benefits.map((benefit, index) => (
                     <motion.li
                       key={benefit.text}
@@ -562,13 +562,13 @@ export default function Estimates() {
                       className="flex items-start gap-3"
                     >
                       <benefit.icon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-dark dark:text-gray-200">{benefit.text}</span>
+                      <span className="text-sm sm:text-base text-dark dark:text-gray-200">{benefit.text}</span>
                     </motion.li>
                   ))}
                 </ul>
 
-                <div className="mt-8 pt-8 border-t border-gray-100 dark:border-surface-border">
-                  <p className="text-sm text-muted dark:text-gray-400 mb-4">
+                <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-100 dark:border-surface-border">
+                  <p className="text-sm text-muted dark:text-gray-400 mb-3 sm:mb-4">
                     Prefer to speak with someone directly?
                   </p>
                   <a

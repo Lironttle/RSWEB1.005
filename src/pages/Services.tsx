@@ -94,7 +94,7 @@ export default function Services() {
   return (
     <main>
       <section
-        className="relative min-h-[50vh] flex items-center"
+        className="relative min-h-[40vh] sm:min-h-[50vh] flex items-center"
         style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2070&q=80)',
           backgroundSize: 'cover',
@@ -103,7 +103,7 @@ export default function Services() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-white dark:from-dark via-white/95 dark:via-dark/95 to-white/70 dark:to-dark/70" />
 
-        <div className="relative container-custom py-20 sm:py-32">
+        <div className="relative container-custom py-14 sm:py-24 md:py-32">
           <motion.nav
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-dark dark:text-white mb-6"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-dark dark:text-white mb-4 sm:mb-6"
           >
             Our Services
           </motion.h1>
@@ -128,7 +128,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-muted dark:text-gray-400 max-w-2xl leading-relaxed"
+            className="text-base sm:text-lg text-muted dark:text-gray-400 max-w-2xl leading-relaxed"
           >
             From new builds to specialist cleaning, we provide comprehensive construction
             and property services backed by industry-leading accreditations and over 16 years
@@ -137,7 +137,7 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-white dark:bg-dark">
+      <section className="py-14 sm:py-20 md:py-28 bg-white dark:bg-dark">
         <div className="container-custom">
           {services.map((service, index) => {
             const isEven = index % 2 === 0;
@@ -145,8 +145,8 @@ export default function Services() {
             return (
               <div
                 key={service.id}
-                className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${
-                  index !== services.length - 1 ? 'mb-16 sm:mb-24 lg:mb-32' : ''
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center ${
+                  index !== services.length - 1 ? 'mb-12 sm:mb-24 lg:mb-32' : ''
                 }`}
               >
                 <motion.div
@@ -161,7 +161,7 @@ export default function Services() {
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-[250px] sm:h-[350px] lg:h-[400px] object-cover hover:scale-105 transition-transform duration-700"
+                      className="w-full h-[200px] sm:h-[320px] lg:h-[400px] object-cover hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-dark/20 to-transparent" />
                   </div>
@@ -175,25 +175,25 @@ export default function Services() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className={`${isEven ? 'lg:order-2' : 'lg:order-1'}`}
                 >
-                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                    <service.icon className="w-8 h-8 text-primary" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                    <service.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary" />
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl font-serif text-dark dark:text-white mb-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-dark dark:text-white mb-3 sm:mb-6">
                     {service.title}
                   </h2>
 
-                  <p className="text-muted dark:text-gray-400 text-lg leading-relaxed mb-8">
+                  <p className="text-muted dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-5 sm:mb-8">
                     {service.description}
                   </p>
 
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                     {service.subServices.map((subService) => (
                       <li key={subService} className="flex items-center gap-3">
                         <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
                           <Check className="w-3 h-3 text-white" />
                         </div>
-                        <span className="text-dark dark:text-gray-200">{subService}</span>
+                        <span className="text-sm sm:text-base text-dark dark:text-gray-200">{subService}</span>
                       </li>
                     ))}
                   </ul>
@@ -204,7 +204,7 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-dark">
+      <section className="py-12 sm:py-16 md:py-24 bg-dark">
         <div className="container-custom text-center">
           <motion.div
             initial="hidden"
@@ -213,24 +213,24 @@ export default function Services() {
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif text-white mb-3 sm:mb-6">
               Ready to Start Your Project?
             </h2>
-            <p className="text-lg sm:text-xl text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto">
+            <p className="text-base sm:text-xl text-gray-400 mb-6 sm:mb-10 max-w-2xl mx-auto">
               Get in touch with our team today for a free consultation and quote
               on your construction or property service needs.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300 group"
               >
                 Contact Us
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href="tel:02074732842"
-                className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-dark"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300 hover:bg-white hover:text-dark"
               >
                 Call 020 7473 2842
               </a>

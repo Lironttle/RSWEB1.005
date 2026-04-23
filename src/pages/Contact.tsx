@@ -146,7 +146,7 @@ export default function Contact() {
   return (
     <main>
       <section
-        className="relative min-h-[50vh] flex items-center"
+        className="relative min-h-[40vh] sm:min-h-[50vh] flex items-center"
         style={{
           backgroundImage: 'url(/images/photos/rs%20team.jpg)',
           backgroundSize: 'cover',
@@ -155,7 +155,7 @@ export default function Contact() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-white dark:from-dark via-white/95 dark:via-dark/95 to-white/70 dark:to-dark/70" />
 
-        <div className="relative container-custom py-20 sm:py-32">
+        <div className="relative container-custom py-14 sm:py-24 md:py-32">
           <motion.nav
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -171,7 +171,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-dark dark:text-white mb-6"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-dark dark:text-white mb-4 sm:mb-6"
           >
             Get In Touch
           </motion.h1>
@@ -180,7 +180,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-muted dark:text-gray-400 max-w-2xl leading-relaxed"
+            className="text-base sm:text-lg text-muted dark:text-gray-400 max-w-2xl leading-relaxed"
           >
             We'd love to hear about your project. Get in touch with our team for
             expert advice and a free, no-obligation quote.
@@ -188,9 +188,9 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-white dark:bg-dark">
+      <section className="py-14 sm:py-20 md:py-28 bg-white dark:bg-dark">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 sm:gap-12 lg:gap-16">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -198,7 +198,7 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-3"
             >
-              <h2 className="text-3xl font-serif text-dark dark:text-white mb-8">Send Us a Message</h2>
+              <h2 className="text-2xl sm:text-3xl font-serif text-dark dark:text-white mb-6 sm:mb-8">Send Us a Message</h2>
 
               {submitStatus === 'success' && (
                 <div className="mb-8 p-4 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg flex items-center gap-3">
@@ -218,8 +218,8 @@ export default function Contact() {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-dark dark:text-gray-200 mb-2">
                       Name <span className="text-primary">*</span>
@@ -261,7 +261,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-dark dark:text-gray-200 mb-2">
                       Phone
@@ -326,7 +326,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 disabled:bg-primary/50 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-primary hover:bg-primary-700 disabled:bg-primary/50 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium text-sm sm:text-base transition-all duration-300"
                 >
                   {isSubmitting ? (
                     <>
@@ -350,28 +350,28 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-2"
             >
-              <h2 className="text-3xl font-serif text-dark dark:text-white mb-8">Contact Information</h2>
+              <h2 className="text-2xl sm:text-3xl font-serif text-dark dark:text-white mb-6 sm:mb-8">Contact Information</h2>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {contactInfo.map((info) => (
-                  <div key={info.label} className="bg-light dark:bg-surface-dark p-6 rounded-xl">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <info.icon className="w-6 h-6 text-primary" />
+                  <div key={info.label} className="bg-light dark:bg-surface-dark p-4 sm:p-6 rounded-xl">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                       </div>
-                      <div>
-                        <h3 className="text-sm text-muted dark:text-gray-400 uppercase tracking-wide mb-1">
+                      <div className="min-w-0">
+                        <h3 className="text-xs sm:text-sm text-muted dark:text-gray-400 uppercase tracking-wide mb-1">
                           {info.label}
                         </h3>
                         {info.href ? (
                           <a
                             href={info.href}
-                            className="text-lg text-dark dark:text-white font-medium hover:text-primary transition-colors"
+                            className="text-base sm:text-lg text-dark dark:text-white font-medium hover:text-primary transition-colors break-words"
                           >
                             {info.value}
                           </a>
                         ) : (
-                          <p className="text-lg text-dark dark:text-white font-medium">{info.value}</p>
+                          <p className="text-base sm:text-lg text-dark dark:text-white font-medium">{info.value}</p>
                         )}
                       </div>
                     </div>
@@ -379,9 +379,9 @@ export default function Contact() {
                 ))}
               </div>
 
-              <div className="mt-8 p-6 bg-dark rounded-xl text-white">
-                <h3 className="text-lg font-semibold mb-2">Emergency Services</h3>
-                <p className="text-gray-400 text-sm mb-4">
+              <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-dark rounded-xl text-white">
+                <h3 className="text-base sm:text-lg font-semibold mb-2">Emergency Services</h3>
+                <p className="text-gray-400 text-sm mb-3 sm:mb-4">
                   Need urgent assistance? We offer 24/7 emergency callout for existing clients.
                 </p>
                 <a
@@ -398,18 +398,18 @@ export default function Contact() {
       </section>
 
       <section className="bg-light dark:bg-surface-dark">
-        <div className="container-custom py-8">
+        <div className="container-custom py-6 sm:py-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-8"
+            className="text-center mb-6 sm:mb-8"
           >
-            <h2 className="text-2xl font-serif text-dark dark:text-white">Find Us</h2>
+            <h2 className="text-xl sm:text-2xl font-serif text-dark dark:text-white">Find Us</h2>
           </motion.div>
         </div>
-        <div className="h-[450px] relative">
+        <div className="h-[280px] sm:h-[380px] md:h-[450px] relative">
           <Map
             latitude={51.515667}
             longitude={0.069998}
