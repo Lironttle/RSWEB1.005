@@ -208,7 +208,7 @@ export default function Partnership() {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-white/40 dark:from-dark/50 via-white/20 dark:via-dark/30 to-transparent dark:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white dark:from-dark via-white/95 dark:via-dark/95 to-white/70 dark:to-dark/70" />
 
         <div className="relative container-custom py-20 sm:py-32">
           <motion.nav
