@@ -197,14 +197,6 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
-
-                  <Link
-                    to="/estimates"
-                    className="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 group"
-                  >
-                    Request Quote
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
                 </motion.div>
               </div>
             );
