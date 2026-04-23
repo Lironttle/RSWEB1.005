@@ -15,16 +15,6 @@ import {
   FileText,
   UserCheck,
   CheckCircle,
-  Building2,
-  Zap,
-  Paintbrush,
-  Hammer,
-  Wrench,
-  Layers,
-  Flame,
-  HardHat,
-  Thermometer,
-  Scissors,
   Phone,
   Mail,
   Loader2,
@@ -78,19 +68,6 @@ const whyPartnerWithUs = [
     title: 'London-Wide Projects',
     description: 'Residential, commercial and new-build projects across Greater London and surrounding areas',
   },
-];
-
-const specialisms = [
-  { icon: Zap, text: 'Electrical Contractors' },
-  { icon: Paintbrush, text: 'Decoration & Painting' },
-  { icon: Layers, text: 'Flooring Specialists' },
-  { icon: Thermometer, text: 'Heating & Ventilation' },
-  { icon: Hammer, text: 'Carpentry & Joinery' },
-  { icon: Wrench, text: 'Tiling Specialists' },
-  { icon: HardHat, text: 'Scaffolding Services' },
-  { icon: Flame, text: 'Fire Protection' },
-  { icon: Scissors, text: 'Steel & Metalwork' },
-  { icon: Building2, text: 'Roofing Specialists' },
 ];
 
 const partnershipSteps = [
@@ -370,52 +347,6 @@ export default function Partnership() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl font-serif text-dark dark:text-white mb-6"
             >
-              Specialisms We Work With
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-lg">
-              We collaborate with a wide range of specialist businesses — if your trade isn't listed, we'd still love to hear from you
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
-            className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4"
-          >
-            {specialisms.map((item) => (
-              <motion.div
-                key={item.text}
-                variants={fadeInUp}
-                className="bg-white dark:bg-surface p-5 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow"
-              >
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <item.icon className="w-5 h-5 text-primary" />
-                </div>
-                <span className="text-dark dark:text-gray-200 text-sm font-medium">{item.text}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white dark:bg-dark">
-        <div className="container-custom">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <motion.div variants={fadeInUp} className="mb-4">
-              <span className="inline-block w-12 h-1 bg-primary rounded-full" />
-            </motion.div>
-            <motion.h2
-              variants={fadeInUp}
-              className="text-4xl md:text-5xl font-serif text-dark dark:text-white mb-6"
-            >
               What We Look For
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-lg">
@@ -434,7 +365,7 @@ export default function Partnership() {
               <motion.div
                 key={item.text}
                 variants={fadeInUp}
-                className="bg-gray-50 dark:bg-surface-dark p-5 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-surface p-5 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow"
               >
                 <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <item.icon className="w-5 h-5 text-primary" />
@@ -446,7 +377,7 @@ export default function Partnership() {
         </div>
       </section>
 
-      <section className="section-padding bg-light dark:bg-surface-dark">
+      <section className="section-padding bg-white dark:bg-dark">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -504,7 +435,7 @@ export default function Partnership() {
         </div>
       </section>
 
-      <section id="apply" className="section-padding bg-white dark:bg-dark">
+      <section id="apply" className="section-padding bg-light dark:bg-surface-dark">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <motion.div
@@ -533,7 +464,7 @@ export default function Partnership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gray-50 dark:bg-surface rounded-2xl shadow-xl p-5 sm:p-8 md:p-12"
+              className="bg-white dark:bg-surface rounded-2xl shadow-xl p-5 sm:p-8 md:p-12"
             >
               {submitStatus === 'success' ? (
                 <div className="text-center py-12">
