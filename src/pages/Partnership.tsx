@@ -203,12 +203,12 @@ export default function Partnership() {
       <section
         className="relative min-h-[60vh] flex items-center"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+          backgroundImage: 'url(/images/photos/rs%20team.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-white dark:from-dark via-white/95 dark:via-dark/95 to-white/80 dark:to-dark/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/80 dark:from-dark/80 via-white/60 dark:via-dark/60 to-white/30 dark:to-dark/30" />
 
         <div className="relative container-custom py-20 sm:py-32">
           <motion.nav

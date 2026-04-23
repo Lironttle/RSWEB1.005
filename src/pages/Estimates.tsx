@@ -210,12 +210,12 @@ export default function Estimates() {
       <section
         className="relative min-h-[50vh] flex items-center"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2070&q=80)',
+          backgroundImage: 'url(/images/photos/rs%20team.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-white dark:from-dark via-white/95 dark:via-dark/95 to-white/70 dark:to-dark/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/80 dark:from-dark/80 via-white/60 dark:via-dark/60 to-white/30 dark:to-dark/30" />
 
         <div className="relative container-custom py-20 sm:py-32">
           <motion.nav
