@@ -57,7 +57,7 @@ const budgetRanges = [
 
 const benefits = [
   { icon: CheckCircle, text: 'Free, no-obligation quotes' },
-  { icon: Clock, text: 'Response within 24 hours' },
+  { icon: Clock, text: 'Response within 72 hours' },
   { icon: Shield, text: 'Transparent pricing' },
   { icon: Award, text: '16 years of experience' },
   { icon: Users, text: 'Fully certified team' },
