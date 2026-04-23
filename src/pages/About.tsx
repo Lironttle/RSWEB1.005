@@ -88,7 +88,7 @@ const teamMembers = [
   { name: 'Raimundas Zibuda', role: 'Director' },
   { name: 'Povilas Zibuda', role: 'Manager' },
   { name: 'Jethro van Biljon', role: 'Contracts Manager' },
-  { name: 'Pawel Golebiowski', role: 'Electrical QS' },
+  { name: 'Pawel Golebiowski', role: 'Electrical Quantity Surveyor' },
   { name: 'Ausra Budenaite', role: 'Accounts Clerk' },
   { name: 'Kasparas Zibuda', role: 'Assistant Manager' },
   { name: 'Armantas Padriezas', role: 'Assistant Manager' },
@@ -344,13 +344,9 @@ export default function About() {
               <Users className="w-6 h-6" />
             </div>
             <span className="text-primary font-medium tracking-wide uppercase text-sm">Meet the Team</span>
-            <h2 className="text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3 mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif text-dark dark:text-white mt-3">
               The People Behind RS Construction
             </h2>
-            <p className="max-w-2xl text-muted dark:text-gray-400">
-              A dedicated team of specialists committed to delivering quality
-              craftsmanship and genuine care on every project.
-            </p>
           </motion.div>
 
           <div className="marquee-pause relative w-full overflow-hidden">
