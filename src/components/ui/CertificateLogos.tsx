@@ -40,11 +40,11 @@ export default function CertificateLogos() {
                   key={cert.id}
                   className="flex basis-1/2 justify-center pl-0 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
                 >
-                  <div className="mx-8 flex shrink-0 items-center justify-center dark:bg-white dark:rounded-lg dark:p-2">
+                  <div className="mx-3 flex min-w-0 items-center justify-center sm:mx-6 md:mx-8 dark:bg-white dark:rounded-lg dark:p-2">
                     <img
                       src={cert.image}
                       alt={cert.description}
-                      className="h-20 w-auto max-w-[160px] object-contain"
+                      className="h-16 w-auto max-w-full object-contain sm:h-20 sm:max-w-[160px]"
                     />
                   </div>
                 </CarouselItem>
