@@ -8,7 +8,6 @@ import {
   Shovel,
   Zap,
   ShieldCheck,
-  Sparkles,
   Check,
   ArrowRight,
   ChevronRight,
@@ -36,7 +35,7 @@ const services = [
     title: 'New Build',
     description: 'From concept to completion, our commercial and industrial development experts deliver innovative design solutions tailored to your requirements.',
     subServices: ['Project Management', 'Design & Build', 'Extensions', 'Loft Conversions'],
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+    image: '/images/SERVICES%20PHOTOS/newbuild.jpg',
   },
   {
     id: 'plumbing',
@@ -44,7 +43,7 @@ const services = [
     title: 'Plumbing & Drainage',
     description: 'Complete plumbing solutions including drain surveys, repairs, bathroom installations, and emergency services.',
     subServices: ['Drain Unblocking', 'CCTV Surveys', 'Bathroom Fitting', 'Leak Repairs'],
-    image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80',
+    image: '/images/SERVICES%20PHOTOS/plumbinganddraineage.jpg',
   },
   {
     id: 'gas',
@@ -52,7 +51,7 @@ const services = [
     title: 'Gas Services',
     description: 'Gas Safe registered engineers providing full domestic and commercial gas services including boiler installations and safety certifications.',
     subServices: ['Boiler Installation', 'Gas Safety Certificates', 'Central Heating', 'Repairs'],
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80',
+    image: '/images/SERVICES%20PHOTOS/gasservices.png',
   },
   {
     id: 'groundworks',
@@ -60,7 +59,7 @@ const services = [
     title: 'Groundworks',
     description: 'Professional groundwork services from foundations to landscaping, for projects of any scale.',
     subServices: ['Foundations', 'Drainage', 'Driveways', 'Landscaping'],
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80',
+    image: '/images/SERVICES%20PHOTOS/groundworks.jpg',
   },
   {
     id: 'electrical',
@@ -68,7 +67,7 @@ const services = [
     title: 'Electrical Works',
     description: 'NICEIC registered electricians delivering safe, compliant electrical installations and maintenance.',
     subServices: ['Rewiring', 'Consumer Units', 'Lighting', 'Testing & Inspection'],
-    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80',
+    image: '/images/SERVICES%20PHOTOS/electricalworks.jpg',
   },
   {
     id: 'fire-stopping',
@@ -76,15 +75,7 @@ const services = [
     title: 'Fire Stopping',
     description: 'Certified fire protection solutions ensuring building compliance and safety.',
     subServices: ['Fire Doors', 'Intumescent Seals', 'Compartmentation', 'Surveys'],
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'steam-cleaning',
-    icon: Sparkles,
-    title: 'Heated Steam Cleaning',
-    description: 'Specialist DOFF and TORC cleaning for heritage buildings and stone restoration.',
-    subServices: ['Stone Cleaning', 'Graffiti Removal', 'Paint Removal', 'Facade Restoration'],
-    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&w=800&q=80',
+    image: '/images/SERVICES%20PHOTOS/firestopping.jpg',
   },
 ];
 
