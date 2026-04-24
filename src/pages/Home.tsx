@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -129,20 +129,66 @@ const reasons = [
   'Health & Safety excellence',
 ];
 
+const HERO_POSTER = '/images/photos/rs%20team.jpg';
+const HERO_VIDEO = '/images/photos/herosectionrs.mp4';
+
 export default function Home() {
   usePageTitle();
   const [activeService, setActiveService] = useState<Service | null>(null);
+  const [enableVideo, setEnableVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+    const connection = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    const saveData = connection?.saveData === true;
+    const slowConnection =
+      connection?.effectiveType === 'slow-2g' || connection?.effectiveType === '2g';
+    if (!prefersReducedMotion && !saveData && !slowConnection) {
+      setEnableVideo(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!enableVideo) return;
+    const video = videoRef.current;
+    if (!video) return;
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {});
+    }
+  }, [enableVideo]);
 
   return (
     <main>
-      <section className="relative min-h-screen flex items-center justify-center">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              'url(/images/photos/rs%20team.jpg)',
-          }}
-        >
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          {enableVideo ? (
+            <video
+              ref={videoRef}
+              className="absolute inset-0 w-full h-full object-cover"
+              src={HERO_VIDEO}
+              poster={HERO_POSTER}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              disableRemotePlayback
+              aria-hidden="true"
+              tabIndex={-1}
+            />
+          ) : (
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${HERO_POSTER})` }}
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-dark/30" />
         </div>
 
