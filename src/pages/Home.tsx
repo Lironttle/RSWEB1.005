@@ -66,7 +66,7 @@ const services: Service[] = [
     longDescription:
       'From concept to completion, our new build specialists deliver commercial and residential projects with an uncompromising focus on quality, programme and budget. We partner with clients and consultants to turn plans into standout finished buildings.',
     subServices: ['Project Management', 'Design & Build', 'Extensions', 'Loft Conversions'],
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/SERVICES%20PHOTOS/newbuild.jpg',
   },
   {
     id: 'plumbing',
@@ -76,7 +76,7 @@ const services: Service[] = [
     longDescription:
       'From leak detection and drain surveys to full bathroom installations and emergency call-outs, our qualified plumbers deliver reliable, code-compliant workmanship for domestic and commercial properties.',
     subServices: ['Drain Unblocking', 'CCTV Surveys', 'Bathroom Fitting', 'Leak Repairs'],
-    image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/SERVICES%20PHOTOS/plumbinganddraineage.jpg',
   },
   {
     id: 'gas',
@@ -86,7 +86,7 @@ const services: Service[] = [
     longDescription:
       'Our Gas Safe registered engineers deliver boiler installations, central heating upgrades, safety certifications and repairs — keeping your property warm, efficient and fully compliant.',
     subServices: ['Boiler Installation', 'Gas Safety Certificates', 'Central Heating', 'Repairs'],
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/SERVICES%20PHOTOS/gasservices.png',
   },
   {
     id: 'groundworks',
@@ -96,7 +96,7 @@ const services: Service[] = [
     longDescription:
       'Solid foundations make great builds. Our groundworks teams handle everything from excavation and foundations to drainage, driveways and landscaping for projects of any scale.',
     subServices: ['Foundations', 'Drainage', 'Driveways', 'Landscaping'],
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/SERVICES%20PHOTOS/groundworks.jpg',
   },
   {
     id: 'electrical',
@@ -106,7 +106,7 @@ const services: Service[] = [
     longDescription:
       'Our NICEIC registered electricians deliver safe, compliant electrical installations, rewiring, testing and inspection — supported by certified documentation for every job.',
     subServices: ['Rewiring', 'Consumer Units', 'Lighting', 'Testing & Inspection'],
-    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/SERVICES%20PHOTOS/electricalworks.jpg',
   },
   {
     id: 'fire-stopping',
@@ -116,7 +116,7 @@ const services: Service[] = [
     longDescription:
       'Certified passive fire protection installers delivering fire doors, intumescent sealing, compartmentation and surveys — protecting buildings and occupants while meeting the latest regulatory standards.',
     subServices: ['Fire Doors', 'Intumescent Seals', 'Compartmentation', 'Surveys'],
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/SERVICES%20PHOTOS/firestopping.jpg',
   },
 ];
 
