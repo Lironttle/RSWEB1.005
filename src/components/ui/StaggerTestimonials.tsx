@@ -67,7 +67,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
     <div
       onClick={() => handleMove(position)}
       className={cn(
-        'absolute left-1/2 top-1/2 cursor-pointer border-2 p-8 transition-all duration-500 ease-in-out',
+        'absolute left-1/2 top-1/2 cursor-pointer border-2 p-5 sm:p-8 transition-all duration-500 ease-in-out',
         isCenter
           ? 'z-10 bg-primary text-white border-primary-700'
           : 'z-0 bg-white dark:bg-surface text-dark dark:text-white border-gray-200 dark:border-surface-border hover:border-primary/50'
@@ -101,7 +101,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         }}
       />
       <div
-        className="mb-4 flex h-14 w-14 items-center justify-center overflow-hidden bg-white p-1"
+        className="mb-3 flex h-11 w-11 sm:mb-4 sm:h-14 sm:w-14 items-center justify-center overflow-hidden bg-white p-1"
         style={{ boxShadow: '3px 3px 0px rgba(10, 10, 10, 0.12)' }}
       >
         <img
@@ -113,7 +113,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       </div>
       <h3
         className={cn(
-          'font-serif text-base sm:text-xl leading-snug',
+          'font-serif text-sm sm:text-xl leading-snug',
           isCenter ? 'text-white' : 'text-dark dark:text-white'
         )}
       >
@@ -121,7 +121,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       </h3>
       <p
         className={cn(
-          'absolute bottom-8 left-8 right-8 mt-2 text-xs sm:text-sm italic leading-relaxed',
+          'absolute bottom-5 left-5 right-5 sm:bottom-8 sm:left-8 sm:right-8 mt-2 text-[11px] sm:text-sm italic leading-relaxed',
           isCenter ? 'text-white/80' : 'text-muted dark:text-gray-400'
         )}
       >
@@ -157,7 +157,7 @@ export default function StaggerTestimonials() {
   useEffect(() => {
     const updateSize = () => {
       const { matches } = window.matchMedia('(min-width: 640px)');
-      setCardSize(matches ? 365 : 290);
+      setCardSize(matches ? 365 : 320);
     };
 
     updateSize();
