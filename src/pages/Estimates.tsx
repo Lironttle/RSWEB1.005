@@ -217,7 +217,7 @@ export default function Estimates() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-white/80 dark:from-dark/80 via-white/60 dark:via-dark/60 to-white/30 dark:to-dark/30" />
 
-        <div className="relative container-custom py-20 sm:py-32">
+        <div className="relative container-custom pt-32 pb-20 sm:py-32">
           <motion.nav
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
