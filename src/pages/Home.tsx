@@ -159,7 +159,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-dark/30" />
         </div>
 
-        <div className="relative container-custom text-center pt-24 pb-32 sm:pt-32 sm:pb-48">
+        <div className="relative container-custom text-center pt-24 pb-20 sm:pt-32 sm:pb-48">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -221,41 +221,42 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-10">
-          <div className="container-custom">
-            <motion.div
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="bg-white/90 dark:bg-surface/90 backdrop-blur-lg shadow-2xl rounded-2xl overflow-hidden"
-            >
-              <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-surface-border">
-                {trustIndicators.map((item) => (
-                  <div
-                    key={item.description}
-                    className="p-8 lg:p-10 text-center"
-                  >
-                    <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 rounded-full mb-4">
-                      <item.icon className="w-7 h-7 text-primary" />
-                    </div>
-                    <div className="flex items-baseline justify-center gap-2 mb-2">
-                      <span className="text-4xl lg:text-5xl font-serif text-dark dark:text-white">
-                        {item.value}
-                      </span>
-                      <span className="text-lg text-muted dark:text-gray-400 font-medium">
-                        {item.label}
-                      </span>
-                    </div>
-                    <p className="text-muted dark:text-gray-400 text-sm">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
       </section>
 
-      <section className="section-padding bg-white dark:bg-dark pt-28 sm:pt-40 md:pt-48 relative overflow-hidden">
+      <div className="relative z-10 mt-8 md:-mt-24 lg:-mt-28">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="bg-white/90 dark:bg-surface/90 backdrop-blur-lg shadow-2xl rounded-2xl overflow-hidden"
+          >
+            <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-surface-border">
+              {trustIndicators.map((item) => (
+                <div
+                  key={item.description}
+                  className="p-8 lg:p-10 text-center"
+                >
+                  <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 rounded-full mb-4">
+                    <item.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <div className="flex items-baseline justify-center gap-2 mb-2">
+                    <span className="text-4xl lg:text-5xl font-serif text-dark dark:text-white">
+                      {item.value}
+                    </span>
+                    <span className="text-lg text-muted dark:text-gray-400 font-medium">
+                      {item.label}
+                    </span>
+                  </div>
+                  <p className="text-muted dark:text-gray-400 text-sm">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      <section className="section-padding bg-white dark:bg-dark pt-16 sm:pt-20 md:pt-24 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-32 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />

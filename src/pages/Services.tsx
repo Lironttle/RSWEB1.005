@@ -94,7 +94,7 @@ export default function Services() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-white dark:from-dark via-white/95 dark:via-dark/95 to-white/70 dark:to-dark/70" />
 
-        <div className="relative container-custom py-20 sm:py-32">
+        <div className="relative container-custom pt-32 pb-20 sm:py-32">
           <motion.nav
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
