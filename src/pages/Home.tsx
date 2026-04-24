@@ -130,7 +130,7 @@ const reasons = [
 ];
 
 const HERO_POSTER = '/images/photos/rs%20team.jpg';
-const HERO_VIDEO = '/images/photos/herosectionrs.mp4';
+const HERO_VIDEO = '/images/photos/herosec2.mp4';
 
 export default function Home() {
   usePageTitle();
