@@ -18,13 +18,6 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="services" element={<Services />} />
-          <Route path="services/new-build" element={<Placeholder />} />
-          <Route path="services/plumbing" element={<Placeholder />} />
-          <Route path="services/gas" element={<Placeholder />} />
-          <Route path="services/groundworks" element={<Placeholder />} />
-          <Route path="services/electrical" element={<Placeholder />} />
-          <Route path="services/fire-stopping" element={<Placeholder />} />
-          <Route path="services/steam-cleaning" element={<Placeholder />} />
           <Route path="estimates" element={<Estimates />} />
           <Route path="clients" element={<Placeholder />} />
           <Route path="about" element={<About />} />

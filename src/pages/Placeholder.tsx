@@ -5,11 +5,6 @@ import { usePageTitle } from '../hooks/usePageTitle';
 
 const pageTitles: Record<string, string> = {
   '/services': 'Our Services',
-  '/services/new-build': 'New Build Construction',
-  '/services/refurbishment': 'Refurbishment',
-  '/services/extensions': 'Extensions',
-  '/services/fit-out': 'Commercial Fit Out',
-  '/services/maintenance': 'Maintenance',
   '/estimates': 'Request an Estimate',
   '/clients': 'Our Clients',
   '/about': 'About Us',
