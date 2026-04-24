@@ -5,6 +5,7 @@ import { usePageTitle } from '../hooks/usePageTitle';
 import ClientLogos from '../components/ui/ClientLogos';
 import CertificateLogos from '../components/ui/CertificateLogos';
 import ServiceModal, { type Service } from '../components/ui/ServiceModal';
+import StaggerTestimonials from '../components/ui/StaggerTestimonials';
 import {
   Building2,
   Droplets,
@@ -19,7 +20,6 @@ import {
   ArrowRight,
   CheckCircle,
   Star,
-  Quote,
   Plus,
 } from 'lucide-react';
 
@@ -117,19 +117,6 @@ const services: Service[] = [
       'Certified passive fire protection installers delivering fire doors, intumescent sealing, compartmentation and surveys — protecting buildings and occupants while meeting the latest regulatory standards.',
     subServices: ['Fire Doors', 'Intumescent Seals', 'Compartmentation', 'Surveys'],
     image: '/images/SERVICES%20PHOTOS/firestopping.jpg',
-  },
-];
-
-const testimonials = [
-  {
-    quote: 'RS Construction have consistently provided excellent workmanship with a proven track record of completing projects to high standards, on time and within budget.',
-    client: 'London Borough of Newham',
-    role: 'Local Authority Partner',
-  },
-  {
-    quote: 'Outstanding quality of workmanship throughout their projects. Their attention to detail and health & safety standards are exceptional.',
-    client: 'Wates',
-    role: 'Construction Partner',
   },
 ];
 
@@ -373,33 +360,7 @@ export default function Home() {
             </motion.h2>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
-            className="grid md:grid-cols-2 gap-8"
-          >
-            {testimonials.map((testimonial) => (
-              <motion.div
-                key={testimonial.client}
-                variants={fadeInUp}
-                transition={{ duration: 0.6 }}
-                className="bg-white dark:bg-surface rounded-2xl p-8 lg:p-10 shadow-lg"
-              >
-                <Quote className="w-10 h-10 text-primary mb-6" />
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-                  "{testimonial.quote}"
-                </p>
-                <div>
-                  <p className="font-semibold text-dark dark:text-white text-lg">
-                    {testimonial.client}
-                  </p>
-                  <p className="text-muted dark:text-gray-400 text-sm">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          <StaggerTestimonials />
         </div>
       </section>
 
