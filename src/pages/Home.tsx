@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
 import ClientLogos from '../components/ui/ClientLogos';
 import CertificateLogos from '../components/ui/CertificateLogos';
+import ServiceModal, { type Service } from '../components/ui/ServiceModal';
 import {
   Building2,
   Droplets,
@@ -18,6 +20,7 @@ import {
   CheckCircle,
   Star,
   Quote,
+  Plus,
 } from 'lucide-react';
 
 const fadeInUp = {
@@ -54,42 +57,66 @@ const trustIndicators = [
   },
 ];
 
-const services = [
+const services: Service[] = [
   {
+    id: 'new-build',
     icon: Building2,
     title: 'New Build',
-    description: 'Commercial and residential development with innovative design solutions',
-    link: '/services/new-build',
+    description: 'Commercial and residential development with innovative design solutions.',
+    longDescription:
+      'From concept to completion, our new build specialists deliver commercial and residential projects with an uncompromising focus on quality, programme and budget. We partner with clients and consultants to turn plans into standout finished buildings.',
+    subServices: ['Project Management', 'Design & Build', 'Extensions', 'Loft Conversions'],
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
   },
   {
+    id: 'plumbing',
     icon: Droplets,
     title: 'Plumbing & Drainage',
-    description: 'Complete plumbing services from repairs to full installations',
-    link: '/services/plumbing',
+    description: 'Complete plumbing services from repairs to full installations.',
+    longDescription:
+      'From leak detection and drain surveys to full bathroom installations and emergency call-outs, our qualified plumbers deliver reliable, code-compliant workmanship for domestic and commercial properties.',
+    subServices: ['Drain Unblocking', 'CCTV Surveys', 'Bathroom Fitting', 'Leak Repairs'],
+    image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80',
   },
   {
+    id: 'gas',
     icon: Flame,
     title: 'Gas Services',
-    description: 'Gas Safe registered for all domestic and commercial needs',
-    link: '/services/gas',
+    description: 'Gas Safe registered for all domestic and commercial needs.',
+    longDescription:
+      'Our Gas Safe registered engineers deliver boiler installations, central heating upgrades, safety certifications and repairs — keeping your property warm, efficient and fully compliant.',
+    subServices: ['Boiler Installation', 'Gas Safety Certificates', 'Central Heating', 'Repairs'],
+    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
   },
   {
+    id: 'groundworks',
     icon: Shovel,
     title: 'Groundworks',
-    description: 'Foundation work, drainage, and landscaping services',
-    link: '/services/groundworks',
+    description: 'Foundation work, drainage, and landscaping services.',
+    longDescription:
+      'Solid foundations make great builds. Our groundworks teams handle everything from excavation and foundations to drainage, driveways and landscaping for projects of any scale.',
+    subServices: ['Foundations', 'Drainage', 'Driveways', 'Landscaping'],
+    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80',
   },
   {
+    id: 'electrical',
     icon: Zap,
     title: 'Electrical Works',
-    description: 'NICEIC registered electricians for safe installations',
-    link: '/services/electrical',
+    description: 'NICEIC registered electricians for safe installations.',
+    longDescription:
+      'Our NICEIC registered electricians deliver safe, compliant electrical installations, rewiring, testing and inspection — supported by certified documentation for every job.',
+    subServices: ['Rewiring', 'Consumer Units', 'Lighting', 'Testing & Inspection'],
+    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80',
   },
   {
+    id: 'fire-stopping',
     icon: ShieldCheck,
     title: 'Fire Stopping',
-    description: 'Certified fire protection and compliance solutions',
-    link: '/services/fire-stopping',
+    description: 'Certified fire protection and compliance solutions.',
+    longDescription:
+      'Certified passive fire protection installers delivering fire doors, intumescent sealing, compartmentation and surveys — protecting buildings and occupants while meeting the latest regulatory standards.',
+    subServices: ['Fire Doors', 'Intumescent Seals', 'Compartmentation', 'Surveys'],
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80',
   },
 ];
 
@@ -117,6 +144,7 @@ const reasons = [
 
 export default function Home() {
   usePageTitle();
+  const [activeService, setActiveService] = useState<Service | null>(null);
 
   return (
     <main>
@@ -227,85 +255,110 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding bg-white dark:bg-dark pt-28 sm:pt-40 md:pt-48">
-        <div className="container-custom">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <motion.div variants={fadeInUp} className="mb-4">
-              <span className="inline-block w-12 h-1 bg-primary rounded-full" />
-            </motion.div>
-            <motion.h2
-              variants={fadeInUp}
-              className="text-4xl md:text-5xl font-serif text-dark dark:text-white mb-6"
-            >
-              Our Services
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-lg">
-              Comprehensive construction solutions for every project
-            </motion.p>
-          </motion.div>
+      <section className="section-padding bg-white dark:bg-dark pt-28 sm:pt-40 md:pt-48 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-32 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
+        </div>
 
+        <div className="container-custom relative">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12 sm:mb-16"
           >
-            {services.map((service) => (
-              <motion.div
-                key={service.title}
-                variants={fadeInUp}
-                transition={{ duration: 0.5 }}
-              >
-                <Link
-                  to={service.link}
-                  className="group block bg-white dark:bg-surface-dark p-8 h-full shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-lg border border-gray-100 dark:border-surface-border"
-                >
-                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
-                    <service.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-dark dark:text-white mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted dark:text-gray-400 mb-4 leading-relaxed">{service.description}</p>
-                  <span className="inline-flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Learn More
-                    <ArrowRight
-                      size={16}
-                      className="group-hover:translate-x-1 transition-transform"
-                    />
-                  </span>
-                </Link>
+            <div className="max-w-2xl">
+              <motion.div variants={fadeInUp} className="mb-4 flex items-center gap-3">
+                <span className="inline-block w-10 h-0.5 bg-primary rounded-full" />
+                <span className="text-primary text-xs sm:text-sm font-semibold uppercase tracking-[0.2em]">
+                  What We Do
+                </span>
               </motion.div>
-            ))}
+              <motion.h2
+                variants={fadeInUp}
+                className="text-4xl sm:text-5xl md:text-6xl font-serif text-dark dark:text-white leading-tight mb-4"
+              >
+                Our Services
+              </motion.h2>
+              <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-lg leading-relaxed">
+                Comprehensive construction solutions for every project — tap any tile to explore the detail.
+              </motion.p>
+            </div>
+
+            <motion.div variants={fadeInUp} className="hidden md:block">
+              <span className="text-sm text-muted dark:text-gray-500">
+                {services.length} specialist disciplines
+              </span>
+            </motion.div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center mt-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-5"
           >
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-full font-medium hover:bg-primary hover:text-white transition-all duration-300 group"
-            >
-              View All Services
-              <ArrowRight
-                size={18}
-                className="group-hover:translate-x-1 transition-transform"
-              />
-            </Link>
+            {services.map((service, index) => {
+              const isFeatured = index === 0 || index === 5;
+              return (
+                <motion.button
+                  key={service.id}
+                  type="button"
+                  onClick={() => setActiveService(service)}
+                  variants={fadeInUp}
+                  transition={{ duration: 0.5 }}
+                  className={`group relative overflow-hidden rounded-2xl text-left h-[320px] sm:h-[360px] lg:h-[420px] shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                    isFeatured ? 'lg:col-span-4' : 'lg:col-span-2'
+                  }`}
+                  aria-label={`Learn more about ${service.title}`}
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                    loading="lazy"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-dark/10 transition-opacity duration-500 group-hover:from-dark group-hover:via-dark/80" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/20 group-hover:to-transparent transition-colors duration-500" />
+
+                  <div className="absolute top-5 left-5 w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transition-all duration-500 group-hover:bg-primary group-hover:border-primary">
+                    <service.icon className="w-6 h-6 text-white" />
+                  </div>
+
+                  <div className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transition-all duration-500 group-hover:bg-white group-hover:rotate-90">
+                    <Plus className="w-4 h-4 text-white transition-colors duration-500 group-hover:text-dark" />
+                  </div>
+
+                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
+                    <h3 className="text-2xl sm:text-[26px] font-serif text-white leading-tight mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-white/75 text-sm leading-relaxed mb-4 line-clamp-2">
+                      {service.description}
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-white text-sm font-medium border-t border-white/20 pt-4 transition-colors duration-300 group-hover:text-primary-300">
+                      View Details
+                      <ArrowRight
+                        size={16}
+                        className="transition-transform duration-300 group-hover:translate-x-1"
+                      />
+                    </span>
+                  </div>
+                </motion.button>
+              );
+            })}
           </motion.div>
         </div>
       </section>
+
+      <ServiceModal
+        service={activeService}
+        onClose={() => setActiveService(null)}
+      />
 
       <ClientLogos />
 
