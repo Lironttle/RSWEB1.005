@@ -267,31 +267,24 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
-            className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12 sm:mb-16"
+            className="text-center max-w-2xl mx-auto mb-12 sm:mb-16"
           >
-            <div className="max-w-2xl">
-              <motion.div variants={fadeInUp} className="mb-4 flex items-center gap-3">
-                <span className="inline-block w-10 h-0.5 bg-primary rounded-full" />
-                <span className="text-primary text-xs sm:text-sm font-semibold uppercase tracking-[0.2em]">
-                  What We Do
-                </span>
-              </motion.div>
-              <motion.h2
-                variants={fadeInUp}
-                className="text-4xl sm:text-5xl md:text-6xl font-serif text-dark dark:text-white leading-tight mb-4"
-              >
-                Our Services
-              </motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-lg leading-relaxed">
-                Comprehensive construction solutions for every project — tap any tile to explore the detail.
-              </motion.p>
-            </div>
-
-            <motion.div variants={fadeInUp} className="hidden md:block">
-              <span className="text-sm text-muted dark:text-gray-500">
-                {services.length} specialist disciplines
+            <motion.div variants={fadeInUp} className="mb-4 flex items-center justify-center gap-3">
+              <span className="inline-block w-10 h-0.5 bg-primary rounded-full" />
+              <span className="text-primary text-xs sm:text-sm font-semibold uppercase tracking-[0.2em]">
+                What We Do
               </span>
+              <span className="inline-block w-10 h-0.5 bg-primary rounded-full" />
             </motion.div>
+            <motion.h2
+              variants={fadeInUp}
+              className="text-4xl sm:text-5xl md:text-6xl font-serif text-dark dark:text-white leading-tight mb-4"
+            >
+              Our Services
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-muted dark:text-gray-400 text-lg leading-relaxed">
+              Comprehensive construction solutions for every project — tap any tile to explore the detail.
+            </motion.p>
           </motion.div>
 
           <motion.div
@@ -299,10 +292,9 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
             variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-5"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5"
           >
-            {services.map((service, index) => {
-              const isFeatured = index === 0 || index === 5;
+            {services.map((service) => {
               return (
                 <motion.button
                   key={service.id}
@@ -310,9 +302,7 @@ export default function Home() {
                   onClick={() => setActiveService(service)}
                   variants={fadeInUp}
                   transition={{ duration: 0.5 }}
-                  className={`group relative overflow-hidden rounded-2xl text-left h-[320px] sm:h-[360px] lg:h-[420px] shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
-                    isFeatured ? 'lg:col-span-4' : 'lg:col-span-2'
-                  }`}
+                  className="group relative overflow-hidden rounded-2xl text-left h-[280px] sm:h-[320px] shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                   aria-label={`Learn more about ${service.title}`}
                 >
                   <img
