@@ -129,13 +129,15 @@ const reasons = [
   'Health & Safety excellence',
 ];
 
-const HERO_POSTER = '/images/photos/rs%20team.jpg';
-const HERO_VIDEO = '/images/photos/herosec2.mp4';
+const HERO_POSTER = '/images/photos/hero-poster.webp';
+const HERO_VIDEO_DESKTOP = '/images/photos/herosec2.mp4';
+const HERO_VIDEO_MOBILE = '/images/photos/herosec2-mobile.mp4';
 
 export default function Home() {
   usePageTitle();
   const [activeService, setActiveService] = useState<Service | null>(null);
   const [enableVideo, setEnableVideo] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
@@ -149,6 +151,7 @@ export default function Home() {
     const saveData = connection?.saveData === true;
     const slowConnection =
       connection?.effectiveType === 'slow-2g' || connection?.effectiveType === '2g';
+    setIsMobile(window.matchMedia('(max-width: 767px)').matches);
     if (!prefersReducedMotion && !saveData && !slowConnection) {
       setEnableVideo(true);
     }
@@ -164,29 +167,29 @@ export default function Home() {
     }
   }, [enableVideo]);
 
+  const heroVideoSrc = isMobile ? HERO_VIDEO_MOBILE : HERO_VIDEO_DESKTOP;
+
   return (
     <main>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          {enableVideo ? (
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${HERO_POSTER})` }}
+        >
+          {enableVideo && (
             <video
               ref={videoRef}
               className="absolute inset-0 w-full h-full object-cover"
-              src={HERO_VIDEO}
+              src={heroVideoSrc}
               poster={HERO_POSTER}
               autoPlay
               loop
               muted
               playsInline
-              preload="metadata"
+              preload="auto"
               disableRemotePlayback
               aria-hidden="true"
               tabIndex={-1}
-            />
-          ) : (
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${HERO_POSTER})` }}
             />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-dark/30" />
