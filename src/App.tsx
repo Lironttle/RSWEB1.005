@@ -8,7 +8,6 @@ import Contact from './pages/Contact';
 import Estimates from './pages/Estimates';
 import Careers from './pages/Careers';
 import Partnership from './pages/Partnership';
-import Placeholder from './pages/Placeholder';
 
 export default function App() {
   return (
@@ -19,9 +18,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="services" element={<Services />} />
           <Route path="estimates" element={<Estimates />} />
-          <Route path="clients" element={<Placeholder />} />
           <Route path="about" element={<About />} />
-          <Route path="accreditations" element={<Placeholder />} />
           <Route path="careers" element={<Careers />} />
           <Route path="partnership" element={<Partnership />} />
           <Route path="contact" element={<Contact />} />
