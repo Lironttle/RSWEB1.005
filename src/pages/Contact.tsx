@@ -204,7 +204,7 @@ export default function Contact() {
                 <div className="mb-8 p-4 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
                   <p className="text-green-800 dark:text-green-400">
-                    Thank you for your message! We'll get back to you within 24 hours.
+                    Thank you for your message! We'll get back to you within 72 hours.
                   </p>
                 </div>
               )}
